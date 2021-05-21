@@ -1,57 +1,37 @@
-.navbar3{
-    text-align: center;
-    border: black solid ;
-  align-items: center;
-  
-  
-  
-    }
+
     .navbar-brand{
-      font-size: 16px;
-      animation: alternate
+      font-size: 13px;
+      align-items: flex-end;
+     
+   
+   
+      
   
   
     }
-  
-    .order-5
-    {
-      justify-content: space-between;
-  
-    text-align: end;
+    .navbar-brand-king {
+      text-align: start;
     }
+  
   
   
   
   
   
   .navbar2{
-    text-align: center;
-    .navbar-brand{
-      font-size: 12px;
+    justify-content: space-between;
+   text-align: end;
+   margin: 14px;
+   display: flex;
+
+  
+   
+   
   
     }
   
-    }
-  .icons {
-    // display: inline-flex;
-    // border: red solid ;
-   justify-content: end;
   
   
-  }
   
-  .all {
-    display: flex;
-  
-    border: green solid 2px;
-  
-  
-  }
-  
-  .span {
-  
-    border: green solid 2px;
-  
-  
-  }
+
   
