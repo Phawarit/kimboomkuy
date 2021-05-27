@@ -13,14 +13,18 @@ import { RegisterComponent } from './register/register.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { SidebarComponent } from './sidebar/sidebar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopBarComponent,
     BannerComponent,
-    RegisterComponent
+    RegisterComponent,
+    SidebarComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +32,7 @@ import {MatRadioModule} from '@angular/material/radio';
     BrowserAnimationsModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatSidenavModule,
     MatInputModule,
     RouterModule.forRoot([{
       path: '', component: TopBarComponent,

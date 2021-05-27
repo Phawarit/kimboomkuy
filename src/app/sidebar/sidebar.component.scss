@@ -1,0 +1,52 @@
+.example-container {
+    width: 100%;
+    height: 100%;
+    margin: 3rem;
+   
+    border: 1px solid #555;
+    .form-check{
+      margin-left: 10px;
+    }
+    .dropdown{
+      margin-left: 10px;
+     
+      .dropdown-menu{
+        font-size: 12px;
+      }
+      
+    }
+
+  }
+
+  .fontsidebar{
+    margin-left: 10px;
+
+  }
+  
+  .carousel{
+    padding: 4rem;
+    width: 100%;
+    
+
+  }
+  mat-drawer{
+   
+  }
+  mat-drawer-content{
+    width: 100%;
+   
+    display: flex;
+    .a{
+      width: 50%;
+     
+    }
+    .detail{
+      margin-left: 10px;
+    }
+   
+  }
+  .select{
+    width: 50%;
+    
+  }
+  
