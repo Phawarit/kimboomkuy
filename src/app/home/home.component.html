@@ -1,0 +1,40 @@
+<div class="test">
+    <app-top-bar></app-top-bar>
+    <app-banner></app-banner>
+    <div class="products">
+    <div class="barProduct">
+     <p class="textH">สินค้าแนะนำ  </p>
+     <span></span>
+     <a class="textP" [routerLink]="['/product-list']">ดูทั้งหมด</a>
+    </div>
+   <div class="product">
+     <mat-card class="imageProductSlide" *ngFor="let product of products ; index as productId" >
+       <img src="{{ product.src}}" alt="">
+       <h4>
+         <a [title]="product.name + ' detials'" [routerLink]="['/products', productId]">
+             {{ product.brand }} <br> {{ product.name }} <br> ราคา {{ product.price }}
+         </a>
+     </h4>
+   </mat-card>
+   </div>
+ 
+   <div class="barProduct">
+     <p class="textH">สินค้ามาใหม่</p>
+     <span></span>
+     <a class="textP">ดูทั้งหมด</a>
+    </div>
+   <div class="product">
+     <mat-card class="imageProductSlide" *ngFor="let product of products ; index as productId" >
+       <h4>
+           <a [title]="product.name + ' detials'" [routerLink]="['/products', productId]">
+               {{ product.name }}
+           </a>
+       </h4>
+       <img src="{{ product.src}}" alt="">
+   </mat-card>
+   </div>
+    </div>
+</div>
+
+ <app-contact></app-contact>
+

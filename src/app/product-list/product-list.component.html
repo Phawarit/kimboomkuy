@@ -1,0 +1,23 @@
+<div class="test">
+    <app-top-bar></app-top-bar>
+    
+    <div class="selectBand">
+        <mat-card class="logo-product"><img src="https://i.pinimg.com/564x/e8/04/19/e80419db976c88cea4cd2aad14ab8678.jpg" alt="iphone"><p>Apple</p></mat-card>
+        <mat-card class="logo-product"><img class="logo" src="https://i.pinimg.com/564x/80/0d/a8/800da8905c1703424a11f2fbc744d172.jpg" alt="samsung"></mat-card>
+        <mat-card class="logo-product"><img src="https://www.techtron.co.th/wp-content/uploads/2020/05/Huawei-Logo.png" alt="huawei"><p>Huawei</p></mat-card>
+        <mat-card class="logo-product"><img class="logo" src="https://download.logo.wine/logo/Oppo/Oppo-Logo.wine.png" alt="oppo"></mat-card>
+        <mat-card class="logo-product"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/601px-Xiaomi_logo_%282021-%29.svg.png" alt="xiaomi"><p>Xiaomi</p></mat-card>
+    </div>
+
+    <div class="product">
+        <mat-card class="imageProductSlide" *ngFor="let product of products ; index as productId" >
+          <h4>
+              <a [title]="product.name + ' detials'" [routerLink]="['/products', productId]">
+                  {{ product.name }}
+              </a>
+          </h4>
+          <img src="{{ product.src}}" alt="">
+      </mat-card>
+      </div>
+</div>
+
