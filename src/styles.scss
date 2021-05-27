@@ -1,6 +1,7 @@
 * {
     font-family: 'Roboto', Arial, sans-serif;
     font-family: 'Prompt', sans-serif;
+    font-size: 16px;
     color: #0c0b0b;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
@@ -18,3 +19,14 @@
     opacity: 0.5;
   }
   /* You can add global styles to this file, and also import other style files */
+
+  .textP{
+    font-size: 14px;
+  }
+  .textH{
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .test{
+    margin: 1% 8%;
+  }

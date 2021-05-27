@@ -9,11 +9,13 @@ export class BannerComponent implements OnInit {
   products = products;
   prev  = document.querySelector('.prev');
   next = document.querySelector('.next');
-
   track = document.querySelector('.track');
+  
+
   constructor() { }
 
   ngOnInit(): void {
+    
   }
   
 

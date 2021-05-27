@@ -1,0 +1,24 @@
+.products {
+    .barProduct {
+      margin-top: 5%;
+      display: flex;
+      span {
+        flex: 1 1 auto;
+      }
+    }
+  
+    .product {
+      display: flex;
+      width: 100%;
+      overflow: auto;
+      text-align: start;
+      img {
+        height: 100px;
+        width: 200px;
+      }
+      .imageProductSlide {
+        margin: 10px;
+      }
+    }
+  }
+

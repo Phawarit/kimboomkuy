@@ -16,7 +16,13 @@ import { RegisterComponent } from './register/register.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
-
+import { ProductListComponent } from './product-list/product-list.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { ContactComponent } from './contact/contact.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,11 @@ import {MatRadioModule} from '@angular/material/radio';
     TopBarComponent,
     BannerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProductListComponent,
+    ContactComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -33,15 +43,10 @@ import {MatRadioModule} from '@angular/material/radio';
     MatCardModule,
     ReactiveFormsModule,
     MatInputModule,
-    RouterModule.forRoot([{
-      path: '', component: TopBarComponent,
-
-    },
-
-    { path: 'registerpage', component: RegisterComponent },
-    
-    ])
-    
+    RouterModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule  
   ],
   providers: [],
   bootstrap: [AppComponent]
