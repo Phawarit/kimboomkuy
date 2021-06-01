@@ -1,49 +1,37 @@
-.container{
-    border: solid 1px black;
-    width: 100%;
-    height: 100%;
-    background-color: chartreuse;
-    display: flex;
+// .container {
+//   border: solid 1px black;
+//   width: 100%;
+//   height: 100%;
+//   background-color: chartreuse;
+//   display: flex;
+//   .cardproduct {
+//     width: 80%;
+
+//     background-color: cornflowerblue;
+//     .a {
+//       display: flex;
+//       background-color: rgb(183, 183, 221);
+//       text-align: end;
+//     }
+//     .detail {
+//       margin-left: 5px;
+//       background-color: burlywood;
+//     }
+//     .number {
+//       display: flex;
+
+//       background-color: cadetblue;
+//     }
+//     span {
+//       flex: 1 1 auto;
+//     }
+//   }
+//   .cost {
+//     height: 100%;
+//     width: 20%;
+
+//     background-color: chocolate;
+//   }
+// }
 
 
-
-    
-   
-    .cardproduct{
-        width: 80%;
-       
-        
-        background-color: cornflowerblue;
-        .a{
-        display: flex;
-        background-color: rgb(183, 183, 221);
-        text-align: end;
-        
-        }
-      .detail{
-          margin-left: 5px;
-          background-color: burlywood;
-      }
-      .number{
-          display: flex;
-        
-            
-
-          background-color: cadetblue;
-      }
-      span{
-          flex: 1 1 auto;
-      }
-      
-       
-    }
-    .cost{
-        height: 100%;
-        width: 20%;
-        
-        background-color: chocolate;
-       
-         
-          
-      }
-}

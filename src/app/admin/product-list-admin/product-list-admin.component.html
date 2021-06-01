@@ -45,19 +45,27 @@
     </mat-drawer>
 
     <div class="products-select">
-        <p class="textH">ทั้งหมด</p>
+        <div class="bar">
+            <p class="textH">ทั้งหมด</p>
+            <span></span>
+            <a >เพิ่มรายการสินค้า</a>
+        </div>
         <div class="products">
             <mat-card *ngFor="let product of products ; index as productId">
-                <a [routerLink]="['/products', product.id]">
-                    <img src="{{ product.src}}" alt="">
-                </a>
-                {{product.brand}}<br>
-                {{product.name}}<br>
-                ราคา {{product.price}}
-
-                
+                <img mat-card-image src="{{ product.src}}" [routerLink]="['/products', product.id]" >
+                <mat-card-content>
+                    <div class="edit">
+                        {{product.brand}}
+                        <span></span>
+                        <button>edit</button>
+                    </div>
+                    {{product.name}}<br>
+                    ราคา {{product.price}}
+                </mat-card-content>
             </mat-card>
         </div>
+        
     </div>
 </mat-drawer-container>
+
 

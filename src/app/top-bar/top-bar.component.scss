@@ -4,6 +4,8 @@
 .navbar2 {
   display: flex;
   border: 1px solid;
+  background-color: #3c3c3c;
+  padding: 1% 8% ;
   .navbar-brand-logo{
     width: 10%;
     img{
@@ -17,28 +19,30 @@
     margin: auto;
     a{ 
       margin: 5%;
+      color: white;
     }
     
   }
 
   .linkbaricon{
     width: 35%;
-    text-align: end;
+    justify-content: flex-end;
+    margin-right: 0;
+    display: flex;
     margin: auto;
     button{
       border: 0;
-      background-color: white;
+      background-color: #3c3c3c;
+      mat-icon{
+        margin: auto;
+        color: white;
+      }
     }
     input{
       margin-right: 5%;
-      //border: none;
-      //border-radius: 12px;
       background-color: rgb(243, 243, 243);
-      padding: 1% 2%;
-      // border: none; /*removes the default css*/
-      border-style:unset; /*your custom css*/
-      border-radius: 10px; /*your-border radius*/
-      
+      border-style:unset; 
+      border-radius: 10px; 
       outline:none;
     }
   } 
