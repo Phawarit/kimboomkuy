@@ -1,49 +1,49 @@
 .container{
-    border: solid 1px black;
+   
     width: 100%;
     height: 100%;
-    background-color: chartreuse;
+  
     display: flex;
+    .product{
+        width: 70%;
+       
+        height: 100%;
+        margin-right: 10px;
+        .card{
+            margin-bottom: 15px;
+            height: 14rem;
 
+        }
+
+    }
+    .pay{
+        height: 100%;
+
+
+    }
+    .span{
+     flex: 1 1 auto;
+    }
+    
 
 
     
    
-    .cardproduct{
-        width: 80%;
-       
-        
-        background-color: cornflowerblue;
-        .a{
-        display: flex;
-        background-color: rgb(183, 183, 221);
-        text-align: end;
-        
-        }
-      .detail{
-          margin-left: 5px;
-          background-color: burlywood;
-      }
-      .number{
-          display: flex;
-        
-            
-
-          background-color: cadetblue;
-      }
-      span{
-          flex: 1 1 auto;
-      }
-      
-       
-    }
-    .cost{
-        height: 100%;
-        width: 20%;
-        
-        background-color: chocolate;
-       
-         
-          
-      }
+}
+.col-md-auto  {
+    line-height: 70px;
+}
+.col-lg-2 {
+   
+    text-align: end ;
+}
+hr {
+    border-top: 1px solid rgb(15, 15, 15);
+  }
+.col-sm-4{
+    margin-top: 40px;
+    text-align: end;
+}
+.btn-outline-primary{
+    margin-top: 6rem;
 }
