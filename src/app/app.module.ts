@@ -26,6 +26,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProfileComponent } from './profile/profile.component';
     ProductListComponent,
     ContactComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductdetailComponent
   ],
   imports: [
     BrowserModule,
