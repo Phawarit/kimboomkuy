@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -28,6 +30,10 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
 
+import { AdminComponent } from './admin/admin.component';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +48,10 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
     ContactComponent,
     HomeComponent,
     ProfileComponent,
-    ProductdetailComponent
+    ProductdetailComponent,
+    AdminComponent,
+    ProductListAdminComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +64,11 @@ import { ProductdetailComponent } from './productdetail/productdetail.component'
     RouterModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule  
+    MatIconModule,
+    MatButtonToggleModule,
+    MatDatepickerModule,
+    MatExpansionModule,
+    MatCheckboxModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

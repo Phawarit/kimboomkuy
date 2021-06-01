@@ -1,5 +1,6 @@
+<app-top-bar></app-top-bar>
+
 <div class="test">
-    <app-top-bar></app-top-bar>
     <app-banner></app-banner>
     <div class="products">
     <div class="barProduct">
@@ -9,12 +10,14 @@
     </div>
    <div class="product">
      <mat-card class="imageProductSlide" *ngFor="let product of products ; index as productId" >
-       <img src="{{ product.src}}" alt="">
-       <h4>
-         <a [title]="product.name + ' detials'" [routerLink]="['/products', productId]">
+       <a [routerLink]="['/products', product.id]">
+        <img src="{{ product.src}}" alt="">
+        <h4>
+         <a [title]="product.name + ' detials'" >
              {{ product.brand }} <br> {{ product.name }} <br> ราคา {{ product.price }}
          </a>
-     </h4>
+        </h4>
+      </a>
    </mat-card>
    </div>
  
