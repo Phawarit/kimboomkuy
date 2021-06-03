@@ -12,6 +12,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo: 'home'},
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent},
   { path: 'product-list-admin', component: ProductListAdminComponent},
   { path: 'checkout', component: CheckoutComponent},
+  { path: 'producttail', component: ProductdetailComponent },
   
 ];
 
