@@ -28,6 +28,7 @@ const routes: Routes = [
   { path: 'history', component: HistoryComponent},
   { path: 'product-detail', component: ProductdetailComponent},
   
+  { path: 'producttail', component: ProductdetailComponent },
   
 ];
 
