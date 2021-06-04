@@ -1,6 +1,11 @@
+.tests{
+  height: 100%;
+  padding: 4% 8%;
+
+}
 .fern {
   display: flex;
-  margin: 5% 8%;
+  height: 550px;
   //////
   .register {
     width: 60%;
@@ -46,7 +51,7 @@
     width: 40%;
     background-color: rgb(219, 217, 217);
     text-align: center;
-    padding: 20% 14px;
+    padding: 10% 14px;
     table{
       text-align: start;
       margin: auto 20%;

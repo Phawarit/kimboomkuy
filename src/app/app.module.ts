@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTableModule} from '@angular/material/table';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -34,6 +35,8 @@ import { AdminComponent } from './admin/admin.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { HistoryComponent } from './profile/history/history.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +54,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     ProductdetailComponent,
     AdminComponent,
     ProductListAdminComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    HistoryComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -68,7 +73,9 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MatButtonToggleModule,
     MatDatepickerModule,
     MatExpansionModule,
-    MatCheckboxModule  
+    MatCheckboxModule,
+    MatRadioModule,
+    MatTableModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

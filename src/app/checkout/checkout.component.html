@@ -1,34 +1,102 @@
+<app-top-bar></app-top-bar>
 <div class="test">
     <div class="fill-in">
         <p class="textH1">การชำระเงิน</p>
         <hr>
-        <p class="textH">ข้อมูลการจัดส่ง</p>
-        <mat-form-field >
-            <mat-label>ชื่อ-สกุล ผู้รับ</mat-label>
-            <input matInput  value="xx">
-        </mat-form-field>
-        <mat-form-field >
-            <mat-label>เบอร์โทรศัพท์ติดต่อ</mat-label>
-            <input matInput  value="xx">
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-            <mat-label>ที่อยู่การจัดส่ง</mat-label>
-            <textarea matInput></textarea>
-        </mat-form-field>
-        <section >
-            <mat-checkbox ><p>ใบกำกับภาษี</p></mat-checkbox>
-        </section>
-        <p class="textH">ช่องทางการชำระเงิน</p>
-        <button>
-            <mat-checkbox>ชำระเงินปลายทาง</mat-checkbox>
-        </button><br>
-        <button>
-            <mat-checkbox>บัตรเคดิต</mat-checkbox>
-        </button><br>
-        <button ><a class="textP">บันทึกข้อมูล</a></button> 
+        <div class="a">
+            <p class="textH">ข้อมูลการจัดส่ง</p>
+            <mat-form-field >
+                <mat-label>ชื่อ-สกุล ผู้รับ</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>เบอร์โทรศัพท์ติดต่อ</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+            <div class="location">
+                <mat-form-field>
+                    <mat-label>ที่อยู่การจัดส่ง</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+                
+            </div>
+
+            <mat-checkbox >ใบกำกับภาษี</mat-checkbox><br>
+            <mat-form-field >
+                <mat-label>ชื่อ-นามสกุล หรือชื่อบริษัท</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>หมายเลขผู้เสียภาษี</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+            <div class="location">
+                <mat-form-field>
+                    <mat-label>ที่อยู่สำหรับออกใบกำกับภาษี</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field>
+                
+            </div>
+            <mat-form-field >
+                <mat-label>ชื่อสำนักงานหรือสาขา</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+
+            <br><p class="textH">ช่องทางการชำระเงิน</p>
+            <mat-radio-group aria-label="Select an option">
+                <div class="payment">
+                    <mat-radio-button value="1" class="textP">ชำระเงินปลายทาง</mat-radio-button>
+                </div>
+                <div class="payment">
+                    <mat-radio-button value="2" class="textP">บัตรเคดิต</mat-radio-button>
+                </div>
+            </mat-radio-group>
+            <mat-form-field >
+                <mat-label>เลขบัตรเครดิต/เดบิต</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+            <mat-form-field >
+                <mat-label>ชื่อบนธนบัตร</mat-label>
+                <input matInput  value="">
+            </mat-form-field>
+            <table>
+                <tr>
+                    <td>
+                        <mat-form-field >
+                            <mat-label>MM/YY</mat-label>
+                            <input matInput  value="">
+                        </mat-form-field>
+                    </td>
+                    <td>
+                        <mat-form-field >
+                            <mat-label>CVV</mat-label>
+                            <input matInput  value="">
+                        </mat-form-field>
+                    </td>
+                </tr>
+            </table>
+            <button class="btn btn-outline-primary" [routerLink]="['/history']">ชำระเงิน</button> 
+        </div>          
+    </div>
+    <div class="sumprice">
+        <p class="textH">สรุปคำสั่งซื้อ</p>
+        <div class="detail">
+            <div>
+                <p>จำนวนสินค้า</p>
+                <p>ราคาสินค้า</p>
+                <p>การจัดส่ง</p>
+                <p>ภาษี</p>
+                <p>รวม</p>
+                <p>(รวมภาษี 7%: x )</p>
+            </div>
+            <div class="amount">
+                <p>2 ชิ้น</p>
+                <p>xx บาท</p>
+                <p>ฟรี</p>
+                <br>
+                <p>44,051 บาท</p>
+            </div>
+        </div>
         
-       
-        
-          
     </div>
 </div>

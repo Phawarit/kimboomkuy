@@ -1,3 +1,4 @@
+<app-top-bar></app-top-bar>
 <div class="detail">
   <div class="productdetail">
     <div class="side-image">
@@ -6,14 +7,19 @@
         class="carousel slide"
         data-bs-ride="carousel"
       >
+      
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active" *ngIf="product">
+            <img src="{{ product.src}}" class="d-block w-100">
+          </div>
+          <div class="carousel-item">
             <img
               src="https://www.iphone-droid.net/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G-Hands-On-Preview-14_1.jpg"
               class="d-block w-100"
               alt="..."
             />
           </div>
+          
           <div class="carousel-item">
             <img
               src="https://www.iphone-droid.net/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G-Hands-On-Preview-20_1.jpg"
@@ -28,6 +34,7 @@
               alt="..."
             />
           </div>
+          
         </div>
         <button
           class="carousel-control-prev"
@@ -50,6 +57,7 @@
       </div>
     </div>
 
+    
     <div class="detail">
       <div class="description">
         <div class="description1">
@@ -150,6 +158,7 @@
         type="button"
         class="btn btn-primary"
         style="margin: 4px; width: 40%"
+        
       >
         ชำระเงิน
       </button>

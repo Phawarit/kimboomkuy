@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './login/login.component';
 import { ActivatedRoute } from '@angular/router';
 import { TopBarComponent } from './top-bar/top-bar.component';
@@ -12,6 +11,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { HistoryComponent } from './profile/history/history.component';
+import { ProductdetailComponent } from './productdetail/productdetail.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo: 'home'},
@@ -20,10 +21,13 @@ const routes: Routes = [
   { path: 'registerpage', component: RegisterComponent},
   { path: 'product-list', component: ProductListComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'products/:productId', component: SidebarComponent},
+  { path: 'products/:productId', component: ProductdetailComponent},
   { path: 'cart', component: CartComponent},
   { path: 'product-list-admin', component: ProductListAdminComponent},
   { path: 'checkout', component: CheckoutComponent},
+  { path: 'history', component: HistoryComponent},
+  { path: 'product-detail', component: ProductdetailComponent},
+  
   
 ];
 

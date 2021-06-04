@@ -18,10 +18,13 @@
   <div class="linkbaricon">
     <input type="text" placeholder="search" >
     <div>
-      <mat-icon style="color: white;">shopping_cart</mat-icon>
-      <button mat-button [matMenuTriggerFor]="beforeMenu">
-        <mat-icon>account_circle</mat-icon>
-      </button>
+      <a><mat-icon style="color: white;" [routerLink]="['/cart']">shopping_cart</mat-icon></a>
+      <a>
+        <button mat-button [matMenuTriggerFor]="beforeMenu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+      </a>
+      
       <mat-menu #beforeMenu="matMenu" xPosition="before">
         <button mat-menu-item [routerLink]="['/login']"><p>เข้าสู่ระบบ</p></button>
         <button mat-menu-item [routerLink]="['/registerpage']"><p>สม้ครสมาชิก</p></button>
