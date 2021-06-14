@@ -6,6 +6,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatTableModule} from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -30,12 +33,19 @@ import {MatIconModule} from '@angular/material/icon';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
+import {MatTabsModule} from '@angular/material/tabs';
+
 
 import { AdminComponent } from './admin/admin.component';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { ProductListAdminComponent } from './admin/product-list-admin/product-list-admin.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HistoryComponent } from './profile/history/history.component';
+import { EditproductComponent } from './admin/editproduct/editproduct.component';
+import { ProfileadminComponent } from './admin/profileadmin/profileadmin.component';
+import { TestRequestGetComponent } from './test-request-get/test-request-get.component';
+import { FriendComponent } from './friend/friend.component';
+
 
 @NgModule({
   declarations: [
@@ -57,12 +67,17 @@ import { HistoryComponent } from './profile/history/history.component';
     CheckoutComponent,
     HistoryComponent,
 
+    EditproductComponent,
+    ProfileadminComponent,
+    TestRequestGetComponent,
+    FriendComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatInputModule,
@@ -75,7 +90,9 @@ import { HistoryComponent } from './profile/history/history.component';
     MatExpansionModule,
     MatCheckboxModule,
     MatRadioModule,
-    MatTableModule  
+    MatTableModule, 
+    FormsModule , 
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
