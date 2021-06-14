@@ -11,23 +11,39 @@
     </div>
   </div>
 
+
+
+
+
+
+
+
   <div class="login">
-    <form class="example-form">
+    <form class="example-form" [formGroup]="form" (submit)="submit()">
       <p class="c">ลงชื่อเข้าสู่ระบบ</p>
       <mat-form-field class="example-full-width">
         <mat-label>อีเมล</mat-label>
-        <input matInput />
+
+
+
+        <input matInput formControlName="email" type="email" class="form-control" placeholder="Email" required  />
       </mat-form-field>
+
+
       <mat-form-field class="example-full-width">
         <mat-label>รหัส</mat-label>
-        <input matInput />
+        <input matInput formControlName="password" type="password" class="form-control" placeholder="Password" required/>
       </mat-form-field>
       <div class="forgetPW">
         <a href="">ลืมรหัสผ่าน?</a>
       </div>
       
-      <button class="buttonLogin" >เข้าสู่ระบบ</button>
+      <button class="buttonLogin "type="submit" >เข้าสู่ระบบ</button>
       <div>
+
+
+
+        
         <p>หรือเข้าสู่ระบบผ่าน</p>
         <span></span>
         <button>
