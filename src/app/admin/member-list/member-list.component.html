@@ -1,7 +1,12 @@
 <app-topbar-admin></app-topbar-admin>
 <div class="member">
     <p class="textH1">รายชื่อบัญชีผู้ใช้</p>
-    <div>
+
+    <div *ngFor="let member of detailMember">
+          <span>{{ member.id }}</span>
+          <span>{{ member.email }}</span>
+    </div>
+    <!-- <div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="position">
               <th mat-header-cell *matHeaderCellDef> </th>
@@ -36,5 +41,5 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
           </table>
-    </div>
+    </div> -->
 </div>

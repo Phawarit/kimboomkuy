@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-member-list',
@@ -6,11 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./member-list.component.scss']
 })
 export class MemberListComponent implements OnInit {
+  detailMember:any;
+
   displayedColumns: string[] = ['position','dateCard', 'dateCheckout', 'name', 'weight', 'symbol'];
   dataSource = ELEMENT_DATA;
-  constructor() { }
+
+  constructor(
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
+    this.detailMember = this.userService.getdetailMember();
   }
 
 }
@@ -36,3 +43,22 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 9, name: 'จอน', surname:'คอนเนอร์' , email:'jonh.c@gmail.com', registerDate: '59.09.20'},
   {position: 10, name: 'จอน', surname:'คอนเนอร์' , email:'jonh.c@gmail.com', registerDate: '59.09.20'}
 ];
+
+export interface member {
+  id: string;
+  email: string;
+  username: string;
+  password_digest: string;
+  created_at: string;
+  updated_at: string;
+  fname: string;
+  lname: string;
+  gender: string;
+  dob: string;
+  user_img: string;
+  tel: string;
+  address:string;
+  invoice_number:string;
+  role:string;
+  
+}
