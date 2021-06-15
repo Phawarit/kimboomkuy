@@ -10,6 +10,8 @@ import { products } from '../product/products';
 export class ProductListComponent implements OnInit {
   banners = banners;
   products = products;
+
+  
   constructor() { }
 
   ngOnInit(): void {

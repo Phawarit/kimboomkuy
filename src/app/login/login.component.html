@@ -11,24 +11,27 @@
         <button [routerLink]="['/registerpage']" class="textP">สร้างบัญชีผู้ใช้</button>
     </div>
   </div>
+
   <div class="login">
-    <form [formGroup]="form" class="example-form" (ngSubmit)="Submit()">
-      <p class="textH1">ลงชื่อเข้าสู่ระบบ</p>
-        <mat-form-field class="example-full-width">
-          <mat-label class="textP">อีเมล</mat-label>
-          <input matInput 
-          formControlName="email"
-          required />
-        </mat-form-field>
+    <form class="example-form" [formGroup]="form" (submit)="Submit()">
+      <p class="c">ลงชื่อเข้าสู่ระบบ</p>
+      <mat-form-field class="example-full-width">
+        <mat-label>อีเมล</mat-label>
+        <input matInput formControlName="email" type="email" class="form-control" placeholder="Email" required  />
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>รหัส</mat-label>
+        <input matInput formControlName="password" type="password" class="form-control" placeholder="Password" required/>
+        <!-- <div *ngIf="form.controls.email.errors && submit==true">กรุณาของท่านให้ถูก</div>
+       -->
+      </mat-form-field>
+      <div class="forgetPW">
+        <a href="">ลืมรหัสผ่าน?</a>
+      </div>
+      <button class="buttonLogin "type="submit" >เข้าสู่ระบบ</button>
 
-        <mat-form-field class="example-full-width">
-          <mat-label class="textP" >รหัส</mat-label>
-          <input matInput type="password"
-          name="password" 
-          formControlName="password"
-          required/>
-        </mat-form-field>
-
+      <div>
         <div class="forgetPW">
           <a class="textP">ลืมรหัสผ่าน?</a>
         </div>
@@ -48,7 +51,8 @@
                 <mat-label>Leave a comment</mat-label>
                 <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
               </mat-form-field> -->
-      </form>
+      </div>
+    </form>
     </div>
   </div>
 </div>

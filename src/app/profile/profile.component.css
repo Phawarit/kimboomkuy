@@ -1,0 +1,73 @@
+.test .inProfile {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 1%;
+}
+
+.test .inProfile .menu-profile {
+  width: 20%;
+  height: 250px;
+  display: block;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding-top: 1%;
+}
+
+.test .inProfile .menu-profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: auto;
+}
+
+.test .inProfile .menu-profile li {
+  list-style-type: none;
+  padding: 3%;
+}
+
+.test .inProfile .menu-profile li:hover {
+  background-color: cornflowerblue;
+  color: white;
+}
+
+.test .inProfile span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.test .inProfile .editProfile {
+  width: 78%;
+  padding: 2% 5%;
+}
+
+.test .inProfile .editProfile table {
+  width: 100%;
+}
+
+.test .inProfile .editProfile td {
+  width: 50%;
+  padding: 10px;
+}
+
+.test .inProfile .editProfile .input {
+  width: 100%;
+}
+
+.test .inProfile .editProfile .textarea {
+  width: 100%;
+}
+
+.test .inProfile .editProfile button {
+  background-color: cornflowerblue;
+  border: none;
+  padding: 0.5% 1%;
+  border-radius: 12px;
+}
+
+.test .inProfile .editProfile button a {
+  color: white;
+}
+/*# sourceMappingURL=profile.component.css.map */

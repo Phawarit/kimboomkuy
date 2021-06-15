@@ -17,4 +17,6 @@ export class TestRequestGetComponent implements OnInit {
     .subscribe(response => {this.bookList = response;});
   }
 
+  // getBook()
+
 }

@@ -1,0 +1,96 @@
+.example-container {
+  padding: 1% 8%;
+  width: 100%;
+  height: 88%;
+}
+
+.example-container span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.example-container mat-drawer {
+  width: 15%;
+}
+
+.example-container mat-drawer p {
+  margin-top: 4%;
+}
+
+.example-container .form-check {
+  margin-left: 10px;
+}
+
+.example-container .dropdown {
+  margin-left: 10px;
+  background-color: hotpink;
+}
+
+.example-container .dropdown .dropdown-menu {
+  font-size: 12px;
+}
+
+.example-container .a, .example-container .b, .example-container .c {
+  width: 100%;
+  padding: 5% 10%;
+}
+
+.example-container .a {
+  background-color: #e2dfdf;
+}
+
+.example-container .c mat-button-toggle-group {
+  width: 100%;
+  margin: auto;
+}
+
+.example-container .c mat-button-toggle-group mat-button-toggle {
+  width: 50%;
+  text-align: center;
+}
+
+.example-container .c .price {
+  border: solid 0.5px gray;
+  border-radius: 12px;
+  margin: auto 5%;
+  padding: 5px 10px;
+}
+
+.example-container .products-select {
+  padding: 2%;
+  height: 100%;
+}
+
+.example-container .products-select .bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.example-container .products-select .products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: auto;
+}
+
+.example-container .products-select .products mat-card {
+  width: 23%;
+  margin: 1%;
+}
+
+.example-container .products-select .products mat-card .edit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.example-container .products-select .products mat-card .edit button {
+  border: none;
+  background-color: red;
+  color: white;
+}
+/*# sourceMappingURL=product-list-admin.component.css.map */

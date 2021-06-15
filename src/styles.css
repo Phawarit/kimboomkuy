@@ -1,0 +1,64 @@
+* {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-family: 'Prompt', sans-serif;
+  font-size: 12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  cursor: pointer;
+  color: #181616;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #0c0b0b;
+  opacity: 0.5;
+}
+
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.textP {
+  font-size: 14px;
+}
+
+.textH {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.textH1 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.test {
+  margin: 1% 8%;
+}
+
+.submitButton {
+  background-color: cornflowerblue;
+  border: none;
+  padding: 0.5% 1%;
+  border-radius: 12px;
+}
+
+.submitButton a {
+  color: white;
+}
+
+hr {
+  border-top: 1px solid #0f0f0f;
+}
+/*# sourceMappingURL=styles.css.map */
