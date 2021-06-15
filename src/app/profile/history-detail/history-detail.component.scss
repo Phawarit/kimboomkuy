@@ -1,0 +1,66 @@
+.test{
+    .inProfile{
+        width: 100%;
+        display: flex;
+        margin-top: 1%;
+        .menu-profile{
+            width: 20%;
+            height: 250px;
+            display: block;
+            background-color: #f1f1f1;
+            text-align: center;
+            padding-top: 1%;
+            img{
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                margin: auto;
+            }
+            li{
+                list-style-type: none;
+                padding: 3%;
+            }li:hover{
+                background-color: cornflowerblue;
+                color: white;
+            }
+
+        }
+        span{
+            flex: 1 1 auto;
+        }
+        .editProfile{
+            width: 78%;
+            border: 0.5px solid rgb(230, 229, 229);
+            height: 650px;
+            overflow: auto;
+            .bar{
+                padding: 10px;
+                display: flex;
+                border-bottom: 0.5px solid rgb(230, 229, 229);
+                p,a, mat-icon{
+                    margin: auto 0 auto 0;
+                }  
+            }
+            .detail{
+                padding: 3% 15%;
+            }
+            .product{
+                td,tr{
+                    width: 40%;
+                }
+            }
+            table{
+                width: 100%;
+                //background-color: saddlebrown;
+                td,tr{
+                    width: 50%;
+                    img{
+                        width: 50%;
+                    }
+                }
+                
+            }
+        }
+    }
+    
+}

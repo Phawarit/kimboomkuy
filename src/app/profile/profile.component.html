@@ -5,8 +5,8 @@
             <img src="https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697" alt="image-profile">
             <p class="textP">จอน คอนเนอร์</p>
             <p class="textP">jonh.c@gmail.com</p>
-            <a ><li>โปรไฟล์</li></a>
-            <a [routerLink]="['/history']"><li>ประวัติการซื้อ</li></a>
+            <a [routerLink]="['/profile']" ><li>โปรไฟล์</li></a>
+            <a [routerLink]="['/history']"><li>ประวัติการซื้อ</li></a>   
         </div>
         <span></span>
         <div class="editProfile">
@@ -14,13 +14,13 @@
             <table>
                 <tr >
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>ชื่อ</mat-label>
                             <input matInput  value="จอน">
                           </mat-form-field>
                     </td>
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>นามสกุล</mat-label>
                             <input matInput  value="คอนเนอร์">
                           </mat-form-field>
@@ -28,13 +28,22 @@
                 </tr>
                 <tr >
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>วัน/เดือน/ปี เกิด</mat-label>
                             <input matInput  value="2001-06-12">
                           </mat-form-field>
+                          <!-- <div>
+                            <mat-form-field appearance="fill">
+                                <mat-label>วัน/เดือน/ปี เกิด</mat-label>
+                                <input matInput [matDatepicker]="picker" >
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                              </mat-form-field>
+                          </div> -->
+                          
                     </td>
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>เบอร์โทรศัพท์</mat-label>
                             <input matInput  value="089-878-9652">
                           </mat-form-field>
@@ -42,7 +51,7 @@
                 </tr>
                 <tr >
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>อีเมล</mat-label>
                             <input matInput  value="jonh.c@gmail.com">
                           </mat-form-field>
@@ -50,35 +59,33 @@
                 </tr>
                 <tr >
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>เปลี่ยนรหัสผ่านใหม่</mat-label>
-                            <input matInput  value="*********">
+                            <input matInput  value="*******">
                           </mat-form-field>
                     </td>
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>ยืนยันรหัสผ่านใหม่</mat-label>
-                            <input matInput  value="*********">
+                            <input matInput  value="*******">
                           </mat-form-field>
                     </td>
                 </tr>
             </table>
-            <div >
-                <mat-form-field appearance="fill"  class="textarea">
-                    <mat-label >ที่อยู่</mat-label>
-                    <textarea matInput ></textarea>
-                </mat-form-field>
-            </div>
+            <mat-form-field appearance="fill">
+                <mat-label>ที่อยู่</mat-label>
+                <textarea matInput></textarea>
+            </mat-form-field>
             <table>
                 <tr >
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>เลขบัตรเครดิต/เดบิต</mat-label>
                             <input matInput  value="xxxx">
                           </mat-form-field>
                     </td>
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>MM/YY</mat-label>
                             <input matInput  value="xxxx">
                           </mat-form-field>
@@ -86,21 +93,21 @@
                 </tr>
                 <tr >
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>ชื่อบนธนบัตร</mat-label>
                             <input matInput  value="xxxx">
                           </mat-form-field>
                     </td>
                     <td >
-                        <mat-form-field class="input">
+                        <mat-form-field >
                             <mat-label>CVV</mat-label>
                             <input matInput value="xxxx">
                           </mat-form-field>
                     </td>
                 </tr>
             </table>
-            <button><a >บันทึกข้อมูล</a></button>  
+            <button><a class="textP">บันทึกข้อมูล</a></button>  
         </div>
     </div>
+    
 </div>
-

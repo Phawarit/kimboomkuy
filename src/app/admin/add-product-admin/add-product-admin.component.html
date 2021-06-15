@@ -1,0 +1,25 @@
+<div class="container mt-3">
+    <h1>Add data</h1>
+    <div class="row justify-content center mt-3">
+        <div class="col-md-12">
+            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+                <div class="form-gruop">
+                   <label for="name">Name</label> 
+                   <input type="text" class="form-control" formControlName="name" required>
+                </div>
+                <div class="form-gruop">
+                    <label for="name">Price</label> 
+                    <input type="text" class="form-control" formControlName="price" required>
+                 </div>
+                 <div class="form-gruop">
+                    <label for="name">Description</label> 
+                    <input type="text" class="form-control" formControlName="description" required>
+                 </div>
+                 <div class="form-gruop">
+                    <button class="btn btn-primary btn-block" type="submit">Add product</button>
+                 </div>
+            </form>
+        </div>
+    </div> 
+
+</div>

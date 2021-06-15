@@ -1,10 +1,42 @@
-<app-top-bar></app-top-bar>
+<app-topbar-admin></app-topbar-admin>
 
-<mat-drawer-container class="example-container">
+<div class="container mt-3" >
+    <div class="d-flex justify-content between flex-wrap flex-md-noward align-item-center pt-2 pb-2 md-3 border-bottom">
+        <p class="textH mt-3">สินค้าทั้งหมด</p>
+        <span></span>
+        <button class="btn btn-sm btn-primary" routerLink="/add-product-admin"> เพิ่มรายการสินค้า </button>
+    </div>
+    
+    <div  class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+                    <th class="text-center" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of Products; let i = index">
+                    <th scope="row">{{product._id}}</th>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.description}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-sm btn-primary" routerLink="/edit-product-admin/{{product._id}}"> Edit </button>
+                        <button class="btn btn-sm btn-danger" (click)="delete(product._id, i)">delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- <mat-drawer-container class="example-container">
     <mat-drawer mode="side" opened>
         <div class="b">
             <p>จัดเรียงตาม:</p>
-            <!-- class="btn dropdown-toggle btn-secondary btn-sm" -->
             <div class="dropdown" class="btn dropdown-toggle btn-secondary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 สินค้าใหม่
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -39,8 +71,7 @@
                 <mat-button-toggle value="bold">ต่ำสุด</mat-button-toggle>
                 <mat-button-toggle value="italic">สูงสุด</mat-button-toggle>
               </mat-button-toggle-group>
-            <!-- <button class="price">ต่ำสุด</button>
-            <button class="price">สูงสุด</button> -->
+          
         </div>
     </mat-drawer>
 
@@ -48,7 +79,7 @@
         <div class="bar">
             <p class="textH">ทั้งหมด</p>
             <span></span>
-            <a >เพิ่มรายการสินค้า</a>
+           <button class="submitButton"><a style="color: white;">เพิ่มรายการสินค้า</a></button>
         </div>
         <div class="products">
             <mat-card *ngFor="let product of products ; index as productId">
@@ -57,7 +88,7 @@
                     <div class="edit">
                         {{product.brand}}
                         <span></span>
-                        <button>edit</button>
+                        <button [routerLink]="['/edit-product-admin']" >edit</button>
                     </div>
                     {{product.name}}<br>
                     ราคา {{product.price}}
@@ -66,6 +97,6 @@
         </div>
         
     </div>
-</mat-drawer-container>
+</mat-drawer-container> -->
 
 

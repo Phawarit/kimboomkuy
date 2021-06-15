@@ -13,21 +13,27 @@
     </div>
   
     <div class="login">
-      <form class="example-form">
+      <form [formGroup]="form" class="example-form" (ngSubmit)="Submit()">
         <p class="textH1">ลงชื่อเข้าสู่ระบบ</p>
         <mat-form-field class="example-full-width">
           <mat-label class="textP">อีเมล</mat-label>
-          <input matInput />
+          <input matInput 
+          formControlName="email"
+          required />
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label class="textP" >รหัส</mat-label>
-          <input matInput />
+          <input matInput type="password"
+          name="password" 
+          formControlName="password"
+          required/>
         </mat-form-field>
         <div class="forgetPW">
           <a class="textP">ลืมรหัสผ่าน?</a>
         </div>
         
-        <button class="buttonLogin" class="textP">เข้าสู่ระบบ</button>
+        <button mat-raised-button class="buttonLogin" class="textP"
+        type="submit">เข้าสู่ระบบ</button>
         <div>
           <p class="textP">หรือเข้าสู่ระบบผ่าน</p>
           <span></span>

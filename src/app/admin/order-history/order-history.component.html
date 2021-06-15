@@ -1,0 +1,40 @@
+<app-topbar-admin></app-topbar-admin>
+<div class="order">
+    <p class="textH1">การสั่งซื้อจากลูกค้า</p>
+    <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <ng-container matColumnDef="position">
+              <th mat-header-cell *matHeaderCellDef> เลขออเดอร์ </th>
+              <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.position}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="dateCard">
+                <th mat-header-cell *matHeaderCellDef> วันที่สั่งซื้อ </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateCard}} </td>
+              </ng-container>
+              
+            <ng-container matColumnDef="dateCheckout">
+                <th mat-header-cell *matHeaderCellDef> วันที่ชำระเงิน </th>
+                <td mat-cell *matCellDef="let element"> {{element.dateCheckout}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> ช่องทางการชำระเงิน </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="weight">
+              <th mat-header-cell *matHeaderCellDef> ราคา </th>
+              <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+            </ng-container>
+          
+            <ng-container matColumnDef="symbol">
+              <th mat-header-cell *matHeaderCellDef> สถานะ </th>
+              <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </div>
+</div>

@@ -13,6 +13,11 @@ import { ProductListAdminComponent } from './admin/product-list-admin/product-li
 import { CheckoutComponent } from './checkout/checkout.component';
 import { HistoryComponent } from './profile/history/history.component';
 import { ProductdetailComponent } from './productdetail/productdetail.component';
+import { EditProductAdminComponent } from './admin/edit-product-admin/edit-product-admin.component';
+import { HistoryDetailComponent } from './profile/history-detail/history-detail.component';
+import { OrderHistoryComponent } from './admin/order-history/order-history.component';
+import { MemberListComponent } from './admin/member-list/member-list.component';
+import { AddProductAdminComponent } from './admin/add-product-admin/add-product-admin.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo: 'home'},
@@ -27,8 +32,12 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'history', component: HistoryComponent},
   { path: 'product-detail', component: ProductdetailComponent},
-  
+  { path: 'edit-product-admin/:id', component: EditProductAdminComponent },
   { path: 'producttail', component: ProductdetailComponent },
+  { path: 'history-detail', component: HistoryDetailComponent },
+  { path: 'order-history', component: OrderHistoryComponent },
+  { path: 'member', component: MemberListComponent },
+  { path: 'add-product-admin', component: AddProductAdminComponent },
   
 ];
 

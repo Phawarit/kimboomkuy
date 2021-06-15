@@ -1,0 +1,87 @@
+<app-top-bar></app-top-bar>
+<div class="test">
+    <div class="inProfile">
+        <div class="menu-profile">
+            <img src="https://static.toiimg.com/photo/msid-67586673/67586673.jpg?3918697" alt="image-profile">
+            <p class="textP">จอน คอนเนอร์</p>
+            <p class="textP">jonh.c@gmail.com</p>
+            <a [routerLink]="['/profile']" ><li>โปรไฟล์</li></a>
+            <a><li>ประวัติการซื้อ</li></a>  
+        </div>
+        <span></span>
+        <div class="editProfile">
+            <div class="bar">
+                <mat-icon [routerLink]="['/history']">arrow_back_icon</mat-icon>
+                <p>หมายเลขคำสั่งซื้อ</p>
+                <a >#P5917</a>
+                <p>| สั่งซื้อสำเร็จ</p>
+            </div>
+            <div class="detail">
+               <table>
+                   <tr>
+                       <td>หมายเลขคำสั่งซื้อ</td>
+                       <td>#P5917</td>
+                   </tr>
+                   <tr>
+                       <td>เวลาการการสั่งซื้อ</td>
+                       <td>24/05/2021 18:53</td>
+                   </tr>
+               </table> 
+               <hr>
+               <table>
+                   <tr>
+                       <td>ช่องทางการชำระเงิน</td>
+                       <td>เก็บปลายทาง</td>
+                   </tr>
+               </table>
+               <hr>
+               <p>ที่อยู่การจัดสั่ง</p>
+               <p>อิมรอน อูปปากอน (+66) 92 983 5788, 444 รัชดา, สามเสนนอก, อำเภอห้วยขวาง, จังหวัดกรุงเทพมหานคร, 10320</p>
+               <hr>
+               <p>สินค้าที่ชำระ</p>
+               <table class="product">
+                   <tr>
+                       <td><img src="https://www.checkraka.com/uploaded/knowledge/article/1723254/008_APPLE_iPhone_12_Pro_Max.png" ></td>
+                       <td>
+                           iPhone 12 Pro <br>
+                           <p>สีที่เลือก: แกรไฟต์ <br> ความจุที่เลือก: 128GB <br> 36,900 บาท</p>
+                       </td>
+                       <td>
+                           1 ชิ้น
+                       </td>
+                   </tr>
+               </table>
+               <hr>
+               <p>สรุปคำสั่งซื้อ</p>
+               <table>
+                   <tr>
+                       <td>จำนวนสินค้า</td>
+                       <td>1 ชิ้น</td>
+                   </tr>
+                   <tr>
+                        <td>ราคาสินค้าทั้งหมด</td>
+                        <td>73,800 บาท</td>
+                   </tr>
+                   <tr>
+                       <td>คูปองส่วนลด</td>
+                       <td>
+                           ส่วนลด 10%
+                           <br>(-7,380)
+                       </td>
+                   </tr>
+                   <tr>
+                       <td>การจัดส่ง</td>
+                       <td>ฟรี</td>
+                   </tr>
+                   <tr>
+                       ภาษี 7%
+                   </tr>
+                   <tr>
+                       <td>รวม <br>รวมภาษี 7%: 5,166</td>
+                       <td>66,420 บาท</td>
+                   </tr>
+               </table>
+            </div>
+    </div>
+</div>
+

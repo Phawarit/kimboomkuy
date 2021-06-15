@@ -18,7 +18,6 @@ export class ProductdetailComponent implements OnInit {
       showConfirmButton: false,
       timer: 1500
     })
-   
   }
 
   constructor( private route:ActivatedRoute ) { }

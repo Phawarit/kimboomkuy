@@ -1,0 +1,30 @@
+<nav class="navbar2 navbar-default navbar-fixed-top">
+    <a class="navbar-brand-logo" [routerLink]="['/product-list-admin']">
+      <img src="https://www.extremeit.com/wp-content/uploads/2015/09/LOGO.png" >
+    </a>
+  
+    <div class="linkbar">
+      <a class="navbar-brand" [routerLink]="['/product-list-admin']">สินค้าทั้งหมด</a>
+      <a class="navbar-brand" [routerLink]="['/order-history']">การสั่งซื้อจากลูกค้า</a>
+      <a class="navbar-brand" [routerLink]="['/member']">บัญชีรายชื่อสมาชิก</a>
+      
+    </div>
+  
+    <div class="linkbaricon">
+      <input type="text" placeholder="search" >
+      <div>
+        <a>
+          <button mat-button [matMenuTriggerFor]="beforeMenu">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+        </a>
+        
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item [routerLink]="['/login']"><p>เข้าสู่ระบบ</p></button>
+          <button mat-menu-item [routerLink]="['/registerpage']"><p>สม้ครสมาชิก</p></button>
+        </mat-menu>
+      </div>
+    </div>
+  
+  </nav>
+  
