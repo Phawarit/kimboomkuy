@@ -24,8 +24,7 @@ export class LoginComponent implements OnInit {
   }
 
   Submit(): void {     
-    this.http.post('https://api.arumirite.codes/login', this.form.getRawValue(), {
-    })
+    this.http.post('https://api.arumirite.codes/login', this.form.getRawValue())
     .subscribe( res => {
       console.log(res)
       this.router.navigate(['/home'])

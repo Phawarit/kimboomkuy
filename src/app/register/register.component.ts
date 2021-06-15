@@ -1,15 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
+import { ActivatedRoute } from '@angular/router';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Swal from 'sweetalert2';
-import { FormBuilder, FormGroup, FormControl  } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
-import { Router } from '@angular/router';
 import { CrudService } from '../service/crud.service';
-import { disableDebugTools } from '@angular/platform-browser';
-
-
 
 @Component({
   selector: 'app-register',
@@ -58,7 +55,6 @@ export class RegisterComponent implements OnInit {
   }
 
   submit():void {
-    
     //console.log(this.registerForm.getRawValue())
     this.http.post('https://api.arumirite.codes/users', this.registerForm.getRawValue())
     .subscribe( res => {

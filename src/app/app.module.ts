@@ -14,17 +14,18 @@ import { MatButtonModule} from '@angular/material/button';
 import { MatRadioModule} from '@angular/material/radio';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatMenuModule} from '@angular/material/menu';
-import { AppComponent } from './app.component';
-import { TopBarComponent } from './top-bar/top-bar.component';
-import { BannerComponent } from './banner/banner.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AppComponent } from './app.component';
+import { TopBarComponent } from './top-bar/top-bar.component';
+import { BannerComponent } from './banner/banner.component';
+import { LoginComponent } from './login/login.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { RegisterComponent } from './register/register.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
@@ -43,6 +44,11 @@ import { OrderHistoryComponent } from './admin/order-history/order-history.compo
 import { MemberListComponent } from './admin/member-list/member-list.component';
 import { TestModule } from './test/test.module';
 import { AddProductAdminComponent } from './admin/add-product-admin/add-product-admin.component';
+import { EditproductComponent } from './admin/editproduct/editproduct.component';
+import { ProfileadminComponent } from './admin/profileadmin/profileadmin.component';
+import { TestRequestGetComponent } from './test-request-get/test-request-get.component';
+import { FriendComponent } from './friend/friend.component';
+
 
 @NgModule({
   declarations: [
@@ -70,12 +76,17 @@ import { AddProductAdminComponent } from './admin/add-product-admin/add-product-
     MemberListComponent,
     AddProductAdminComponent,
 
+    EditproductComponent,
+    ProfileadminComponent,
+    TestRequestGetComponent,
+    FriendComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatInputModule,
@@ -91,7 +102,8 @@ import { AddProductAdminComponent } from './admin/add-product-admin/add-product-
     MatTableModule,
     HttpClientModule,
     TestModule,
-    FormsModule  
+    FormsModule,  
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
