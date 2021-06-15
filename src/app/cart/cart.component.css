@@ -1,0 +1,51 @@
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 1% 8%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .product {
+  width: 70%;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.container .product .card {
+  margin-bottom: 15px;
+  height: 14rem;
+}
+
+.container .pay {
+  height: 100%;
+}
+
+.container .span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.col-md-auto {
+  line-height: 70px;
+}
+
+.col-lg-2 {
+  text-align: end;
+}
+
+hr {
+  border-top: 1px solid #0f0f0f;
+}
+
+.col-sm-4 {
+  margin-top: 40px;
+  text-align: end;
+}
+
+.btn-outline-primary {
+  margin-top: 6rem;
+}
+/*# sourceMappingURL=cart.component.css.map */

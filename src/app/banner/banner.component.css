@@ -1,0 +1,44 @@
+img {
+  height: 400px;
+}
+
+.carousel {
+  width: 80%;
+  margin: 2% auto;
+}
+
+.logo-product,
+.selectBand {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 10px;
+  background-size: auto;
+}
+
+.logo-product mat-card:hover,
+.selectBand mat-card:hover {
+  background-color: #dbd9d9;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo-product p,
+.selectBand p {
+  margin: auto;
+}
+
+.logo-product img,
+.selectBand img {
+  height: 40px;
+  width: 50px;
+}
+
+.logo-product .logo,
+.selectBand .logo {
+  width: 80px;
+}
+/*# sourceMappingURL=banner.component.css.map */

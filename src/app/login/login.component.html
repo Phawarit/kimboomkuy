@@ -13,17 +13,20 @@
   </div>
 
   <div class="login">
-    <form class="example-form" [formGroup]="form" (submit)="submit()">
+    <form class="example-form" [formGroup]="form" (submit)="Submit()">
       <p class="c">ลงชื่อเข้าสู่ระบบ</p>
       <mat-form-field class="example-full-width">
         <mat-label>อีเมล</mat-label>
         <input matInput formControlName="email" type="email" class="form-control" placeholder="Email" required  />
       </mat-form-field>
-
+      
+      
 
       <mat-form-field class="example-full-width">
         <mat-label>รหัส</mat-label>
         <input matInput formControlName="password" type="password" class="form-control" placeholder="Password" required/>
+        <!-- <div *ngIf="form.controls.email.errors && submit==true">กรุณาของท่านให้ถูก</div>
+       -->
       </mat-form-field>
       <div class="forgetPW">
         <a href="">ลืมรหัสผ่าน?</a>

@@ -1,0 +1,50 @@
+.admin {
+  margin: 4rem;
+}
+
+.btn-group {
+  text-align: end;
+  width: 25%;
+  margin: 6px;
+}
+
+.card {
+  width: 170px;
+  height: 170px;
+}
+
+.btn {
+  margin-top: 15px;
+}
+
+.addpicproduct {
+  width: 100%;
+}
+
+.selectproduct {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.selectproduct #dropdownMenuButton {
+  height: 75%;
+  margin-left: 4px;
+}
+
+.selectproduct #exampleInputEmail2 {
+  width: 15%;
+  margin-left: 4px;
+}
+
+.selectproduct .form-group2 {
+  width: 90%;
+  height: 50%;
+}
+
+.span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+/*# sourceMappingURL=editproduct.component.css.map */

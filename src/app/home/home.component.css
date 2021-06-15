@@ -1,0 +1,31 @@
+.products .barProduct {
+  margin-top: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.products .barProduct span {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.products .product {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  overflow: auto;
+  text-align: start;
+}
+
+.products .product img {
+  height: 100px;
+  width: 200px;
+}
+
+.products .product .imageProductSlide {
+  margin: 10px;
+}
+/*# sourceMappingURL=home.component.css.map */

@@ -1,0 +1,65 @@
+.test {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.fill-in {
+  width: 70%;
+  height: 650px;
+  overflow: auto;
+}
+
+.fill-in .a {
+  padding: 0 10%;
+  margin-bottom: 50px;
+}
+
+.fill-in .a mat-form-field {
+  width: 100%;
+}
+
+.fill-in .a .location {
+  border-radius: 12px;
+}
+
+.fill-in .a .payment {
+  border: #d3d1d1 solid 1px;
+  border-radius: 12px;
+  padding: 2%;
+  margin-bottom: 10px;
+}
+
+.fill-in .a table {
+  width: 100%;
+}
+
+.fill-in .a table tr, .fill-in .a table td {
+  padding: 10px;
+}
+
+.sumprice {
+  margin: 2% 1% auto 1%;
+  width: 30%;
+  border: #d3d1d1 solid 1px;
+}
+
+.sumprice .textH {
+  margin: 3%;
+}
+
+.sumprice .detail {
+  padding: 3%;
+  background-color: #f1f1f1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sumprice .detail .amount {
+  text-align: end;
+}
+/*# sourceMappingURL=checkout.component.css.map */
