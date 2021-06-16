@@ -1,7 +1,10 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Swal from 'sweetalert2';
 import { products } from '../product/products';
+import { productdetails } from './productdetail';
+
 
 @Component({
   selector: 'app-productdetail',
@@ -9,7 +12,9 @@ import { products } from '../product/products';
   styleUrls: ['./productdetail.component.scss']
 })
 export class ProductdetailComponent implements OnInit {
-  product: { name: string; brand: string; price: number; description: string; src: string; bb: string; } | { name: string; brand: string; price: number; description: string; src: string; bb?: undefined; } | undefined;
+  details :  productdetails [] =[];
+  data :any;
+ 
   addtocart() {
     Swal.fire({
       position: 'center',
@@ -20,13 +25,17 @@ export class ProductdetailComponent implements OnInit {
     })
   }
 
-  constructor( private route:ActivatedRoute ) { }
+  constructor( private route:ActivatedRoute 
+   , private http: HttpClient) { }
 
   ngOnInit(): void {
-    const routeParams = this.route.snapshot.paramMap;
-  const productIdFromRoute = Number(routeParams.get('productId'));
-
-  // Find the product that correspond with the id provided in route.
-  this.product = products.find(product => product.id === productIdFromRoute);
+    this.data= history.state.data
+    console.log(history.state.data);
+    console.log(this.data.id)
+    
+    this.http.get< productdetails[]>('https://api.arumirite.codes/products')
+    .subscribe(response => {this.details = response;});
+    // console.log('details')
+   
   }
 }

@@ -1,61 +1,96 @@
 <app-top-bar></app-top-bar>
 
 <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>
-        <div class="b">
-            <p>จัดเรียงตาม:</p>
-            <!-- class="btn dropdown-toggle btn-secondary btn-sm" -->
-            <div class="dropdown" class="btn dropdown-toggle btn-secondary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                สินค้าใหม่
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">สินค้าใหม่</a>
-                <a class="dropdown-item" href="#">สินค้าเก่า</a>
-                <a class="dropdown-item" href="#">Something else </a>
-                </div>
-            </div>
+  <mat-drawer mode="side" opened>
+    <div class="b">
+      <p>จัดเรียงตาม:</p>
+      <!-- class="btn dropdown-toggle btn-secondary btn-sm" -->
+      <div
+        class="dropdown"
+        class="btn dropdown-toggle btn-secondary btn-sm"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        สินค้าใหม่
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">สินค้าใหม่</a>
+          <a class="dropdown-item" href="#">สินค้าเก่า</a>
+          <a class="dropdown-item" href="#">Something else </a>
         </div>
-        
-
-        <div class="a">
-            <p class="fontsidebar">จัดเเยกตาม:</p>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-              <label class="form-check-label" for="exampleRadios1"> มือถือ </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked/>
-              <label class="form-check-label" for="exampleRadios1"> อุปกรณ์เสริม </label>
-            </div>
-            <p>แบรนด์</p>
-            <div class="form-check"  *ngFor="let banner of banners ; index as productId"  >
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-                <label class="form-check-label" for="exampleRadios1"> {{banner.band}} </label>
-            </div>
-        </div>
-      
-        <div class="c">
-            <p>ราคา:</p>
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-                <mat-button-toggle value="bold">ต่ำสุด</mat-button-toggle>
-                <mat-button-toggle value="italic">สูงสุด</mat-button-toggle>
-              </mat-button-toggle-group>
-            <!-- <button class="price">ต่ำสุด</button>
-            <button class="price">สูงสุด</button> -->
-        </div>
-    </mat-drawer>
-
-    <div class="products-select">
-        <p class="textH">ทั้งหมด</p>
-        <div class="products">
-            <mat-card *ngFor="let product of products ; index as productId">
-                <a [routerLink]="['/products', product.id]">
-                    <img src="{{ product.src}}" alt="">
-                </a>
-                {{product.brand}}<br>
-                {{product.name}}<br>
-                ราคา {{product.price}}  
-            </mat-card>
-        </div>
+      </div>
     </div>
-</mat-drawer-container>
 
+    <div class="a">
+      <p class="fontsidebar">จัดเเยกตาม:</p>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+          checked
+        />
+        <label class="form-check-label" for="exampleRadios1"> มือถือ </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios2"
+          value="option2"
+          checked
+        />
+        <label class="form-check-label" for="exampleRadios1">
+          อุปกรณ์เสริม
+        </label>
+      </div>
+      <p>แบรนด์</p>
+      <div
+        class="form-check"
+        *ngFor="let banner of banners; index as productId"
+      >
+        <input
+          class="form-check-input"
+          type="radio"
+          name="exampleRadios"
+          id="exampleRadios1"
+          value="option1"
+          checked
+        />
+        <label class="form-check-label" for="exampleRadios1">
+          {{ banner.band }}
+        </label>
+      </div>
+    </div>
+
+    <div class="c">
+      <p>ราคา:</p>
+      <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="bold">ต่ำสุด</mat-button-toggle>
+        <mat-button-toggle value="italic">สูงสุด</mat-button-toggle>
+      </mat-button-toggle-group>
+      <!-- <button class="price">ต่ำสุด</button>
+            <button class="price">สูงสุด</button> -->
+    </div>
+  </mat-drawer>
+
+  <div class="products-select">
+    <p class="textH">ทั้งหมด</p>
+    <div class="products">
+      <mat-card *ngFor="let product of productList">
+        <a  [routerLink]="['/products',product.id]" [state] = "{ data: product }">  
+      
+          <img src="{{ product.product_img }}" />
+          {{ product.brand }}<br />
+          {{ product.product_name }}<br />
+          ราคา {{ product.price }}
+        </a>
+      </mat-card>
+    </div>
+  </div>
+</mat-drawer-container>

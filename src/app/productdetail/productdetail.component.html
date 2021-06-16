@@ -9,8 +9,15 @@
       >
       
         <div class="carousel-inner">
-          <div class="carousel-item active" *ngIf="product">
-            <img src="{{ product.src}}" class="d-block w-100">
+          <div class="carousel-item active" *ngIf="details">
+            <div *ngFor = "let pic of details ">
+              <div *ngIf= "data.id == pic.id" >
+                <img src="{{ pic .product_img}}" class="d-block w-100">
+
+              </div>
+              
+            </div>
+            
           </div>
           <div class="carousel-item">
             <img
