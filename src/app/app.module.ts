@@ -47,7 +47,6 @@ import { AddProductAdminComponent } from './admin/add-product-admin/add-product-
 import { EditproductComponent } from './admin/editproduct/editproduct.component';
 import { ProfileadminComponent } from './admin/profileadmin/profileadmin.component';
 import { TestRequestGetComponent } from './test-request-get/test-request-get.component';
-import { FriendComponent } from './friend/friend.component';
 
 
 @NgModule({
@@ -79,7 +78,7 @@ import { FriendComponent } from './friend/friend.component';
     EditproductComponent,
     ProfileadminComponent,
     TestRequestGetComponent,
-    FriendComponent
+    
   ],
   imports: [
     BrowserModule,

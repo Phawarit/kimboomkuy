@@ -8,11 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
+
+  userdata: any 
+
   constructor(
 
   ) { }
 
   ngOnInit(): void {
+    // this.userdata =localStorage.getItem('login_succes')
     
   }
 

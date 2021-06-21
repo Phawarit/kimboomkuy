@@ -9,38 +9,24 @@
       >
       
         <div class="carousel-inner">
-          <div class="carousel-item active" *ngIf="details">
-            <div *ngFor = "let pic of details ">
-              <div *ngIf= "data.id == pic.id" >
-                <img src="{{ pic .product_img}}" class="d-block w-100">
+          <div class="carousel-item active">
 
-              </div>
+            <!-- <div *ngFor ="let pic of details">
+              <div *ngIf= "data.id == pic.id" > -->
+                
+                <!-- src="{{ pic .product_img}}" -->
+                {{ details[0]?.name }}
+                <img  class="d-block w-100"> 
+
+              <!-- </div>
               
-            </div>
+            </div> -->
             
           </div>
-          <div class="carousel-item">
-            <img
-              src="https://www.iphone-droid.net/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G-Hands-On-Preview-14_1.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
           
-          <div class="carousel-item">
-            <img
-              src="https://www.iphone-droid.net/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G-Hands-On-Preview-20_1.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="https://www.iphone-droid.net/wp-content/uploads/2021/01/Samsung-Galaxy-S21-Ultra-5G-Hands-On-Preview-13_1.jpg"
-              class="d-block w-100"
-              alt="..."
-            />
-          </div>
+          
+          
+          
           
         </div>
         <button
@@ -122,26 +108,23 @@
     </div>
   </div>
 
-  <div class="select">
-    <div class="card w-50">
-      <h3>Samsung</h3>
-      <p>Galaxy S21 5G</p>
+  <div class="select" *ngIf="details">
+    <div class="card w-50"  *ngFor ="let pic of details">
+      <div class="top">
+        {{ details[0].name }}
+        <p>Galaxy S21 5G</p>
+      </div>
 
       <div class="card-body">
-        <div>
+        <div class="test">
           <p>เลือกสี</p>
-
           <button type="button" class="btn1 btn-outline-dark"></button>
           <button type="button" class="btn2 btn-outline-dark"></button>
           <button type="button" class="btn3 btn-outline-dark"></button>
-
-          <div class="storage">
+          <div class="storage ">
             <p>เลือกความจุ</p>
-
             <button type="button" class="btn btn-outline-dark">128GB</button>
-
             <button type="button" class="btn btn-outline-dark">256GB</button>
-
             <button type="button" class="btn btn-outline-dark">512GB</button>
           </div>
           <div>
@@ -149,26 +132,21 @@
           </div>
         </div>
       </div>
-    </div>
-    <span> </span>
-    <div>
-      <button
-        type="button"
-        class="btn btn-secondary"
-        style="margin: 4px; width: 40%"
-        (click)="addtocart()"
-      >
-        เพิ่มใส่ตระกร้า</button
-      ><br />
 
-      <button
-        type="button"
-        class="btn btn-primary"
-        style="margin: 4px; width: 40%"
+      <div class="button">
+
+
+        <button type="button" class="btn btn-secondary" (click)="addtocart(details)">
+          เพิ่มใส่ตระกร้า
+        </button>
+
         
-      >
-        ชำระเงิน
-      </button>
+        <br />
+        <button type="button" class="btn btn-primary">
+          ชำระเงิน
+        </button>
+      </div>
+
     </div>
   </div>
 </div>

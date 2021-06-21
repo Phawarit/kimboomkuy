@@ -4,13 +4,19 @@
   <div class="product">
    <div class="row">
      <div class="col-sm-8"><h2 >รถเข็นของคุณ</h2></div>
+
      <div class="col-sm-4" [routerLink]="['home']"><a><P><u>เลือกสินค้าต่อ</u></P></a></div>
    </div>
    
    
    <hr>
+   <div   *ngFor="let item of items" >
+     {{item.name}}
+
+
+   </div>
    
-   <div class="card w-100 ">
+   <!-- <div class="card w-100 ">
      <div class="card-body">
        <div class="row">
          <div class="col">
@@ -43,7 +49,7 @@
       
        
      </div>
-   </div>
+   </div> -->
    
   </div>
   

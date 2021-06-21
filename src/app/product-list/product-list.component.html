@@ -83,12 +83,12 @@
     <p class="textH">ทั้งหมด</p>
     <div class="products">
       <mat-card *ngFor="let product of productList">
-        <a  [routerLink]="['/products',product.id]" [state] = "{ data: product }">  
+        <a  [routerLink]="['/products',product.id]" >  
       
-          <img src="{{ product.product_img }}" />
+          <!-- <img src="{{ product.product_img }}" /> -->
           {{ product.brand }}<br />
-          {{ product.product_name }}<br />
-          ราคา {{ product.price }}
+          {{ product.model }}<br />
+          ราคา {{ product.model}}
         </a>
       </mat-card>
     </div>

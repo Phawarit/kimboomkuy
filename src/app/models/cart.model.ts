@@ -1,7 +1,5 @@
 
-
-
-export interface productdetails {
+export interface Cart {
   id: number;
   name: string;
   base_price: string;
@@ -30,4 +28,3 @@ interface Category {
   created_at: string;
   updated_at: string;
 }
-

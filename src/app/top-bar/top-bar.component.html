@@ -14,17 +14,20 @@
   <div class="linkbaricon">
     <input type="text" placeholder="search" >
     <div>
-      <a><mat-icon style="color: white;" [routerLink]="['/cart']">shopping_cart</mat-icon></a>
+      <a><mat-icon style="color: white;" [routerLink]="['/cart/:productcart']">shopping_cart</mat-icon></a>
       <a>
         <button mat-button [matMenuTriggerFor]="beforeMenu">
           <mat-icon>account_circle</mat-icon>
         </button>
       </a>
+    
+        <mat-menu #beforeMenu="matMenu" xPosition="before" >
+          <button mat-menu-item [routerLink]="['/login']" *ngIf="userdata != 'true'"><p>เข้าสู่ระบบ</p></button>
+          <button mat-menu-item [routerLink]="['/registerpage']" *ngIf="userdata != 'true'"><p>สม้ครสมาชิก</p></button>
+          <button mat-menu-item [routerLink]="['/login']" *ngIf="userdata == 'true'"><p></p></button>
+        </mat-menu>
+
       
-      <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item [routerLink]="['/login']"><p>เข้าสู่ระบบ</p></button>
-        <button mat-menu-item [routerLink]="['/registerpage']"><p>สม้ครสมาชิก</p></button>
-      </mat-menu>
     </div>
   </div>
 

@@ -38,9 +38,7 @@ export class LoginComponent implements OnInit {
       password:['',[Validators.required,
         Validators.minLength(6)]]
     });
-
     console.log(this.form);
-    
   }
   onSubmit(){
     console.log(this.form);
@@ -52,8 +50,10 @@ export class LoginComponent implements OnInit {
   Submit(): void {
     console.log(this.form);
    
+   
     this.submit = true
     if (this.form.valid == true) {
+      localStorage.setItem("login_succes", 'true');
       this.http.post('https://api.arumirite.codes/login', this.form.getRawValue())
       .subscribe(() => this.router.navigate(['/home'])); 
       Swal.fire({

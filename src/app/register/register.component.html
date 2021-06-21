@@ -8,20 +8,20 @@
         <mat-form-field class="example-full-width">
           <mat-label>ชื่อ</mat-label>
           <input formControlName="fName" 
-          matInput placeholder="ประยุทธ" 
+          matInput placeholder="ชื่อ" 
           required/>
         </mat-form-field>
         <mat-form-field class="example-full-width">
           <mat-label>นามสกุล</mat-label>
           <input formControlName="lName" 
-          matInput placeholder="จันโอชา" 
+          matInput placeholder="นามสกุล" 
           required />
         </mat-form-field>
 
         <mat-radio-group class="example-full-width" aria-label="เพศ" style="width: 100%;">
           <mat-label>เพศ</mat-label><br>
-          <mat-radio-button value="1">Option 1</mat-radio-button>
-          <mat-radio-button value="2">Option 2</mat-radio-button>
+          <mat-radio-button value="1">ชาย</mat-radio-button>
+          <mat-radio-button value="2">หญิง</mat-radio-button>
         </mat-radio-group>
 
         <!-- <mat-form-field class="example-full-width">
@@ -33,7 +33,7 @@
 
         <mat-form-field class="example-full-width">
           <mat-label>วันเกิด</mat-label>
-          <input formControlName="dob" 
+          <input formControlName="วันเกิด" 
           matInput placeholder="" 
           required />
         </mat-form-field>
@@ -75,14 +75,14 @@
           <mat-label>อีเมล</mat-label>
           <input formControlName="email" 
           type="email" matInput 
-          placeholder="lungtoo@gmail.com" 
+          placeholder="อีเมล" 
           required/>
         </mat-form-field>
         <mat-form-field class="example-full-width1">
           <mat-label>รหัสผ่าน</mat-label>
           <input formControlName="password" 
           type="password" matInput 
-          placeholder="123456789" 
+          placeholder="รหัสผ่าน" 
           type="password" 
           required/>
         </mat-form-field>
@@ -95,7 +95,7 @@
         <input type="text" [disabled]="true" formControlName="test">
         <mat-form-field class="example-full-width1" >
           <mat-label >เบอร์ติดต่อ</mat-label>
-          <input [disabled]="true" matInput  placeholder="ตัวอย่าง:123456789"
+          <input [disabled]="true" matInput  placeholder="เบอร์ติดต่อ"
           formControlName="tel"
           
            />
@@ -104,16 +104,19 @@
           <mat-label>ที่อยุ่</mat-label>
           <textarea
             matInput
-            placeholder="ตัวอย่าง: 111/1 ถนน ศรีจันทร์ ต.ในเมือง อ.เมือง จ.เดมาเซีย 40000"
+            placeholder="ที่อยุ่"
             formControlName="address"
             required
           ></textarea>
         </mat-form-field>
   
         
-          <button type="submit" class="bt" >
-            สร้างบัญชีผู้ใช้
-          </button>
+          <a>
+            <button type="submit" class="bt" >
+              สร้างบัญชีผู้ใช้
+            </button>
+
+          </a>
         
 
       </form>

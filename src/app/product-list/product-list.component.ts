@@ -4,6 +4,7 @@ import { banners } from '../product/banners';
 import { products } from '../product/products';
 import { allproduct } from './productlist-get';
 
+
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
@@ -19,7 +20,10 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get<allproduct []>('https://api.arumirite.codes/products')
-    .subscribe(response => {this.productList= response;});
+    .subscribe(response => {
+      console.log(response)
+      this.productList= response;});
+      
   }
 
   }

@@ -1,14 +1,38 @@
 
+
+
+
 export interface allproduct {
   id: number;
-  product_name: string;
-  category_id: number;
-  product_img: string;
+  model: Model[];
   price: string;
-  amount: number;
-  brand: string;
-  availiable: boolean;
+  amount?: any;
   description?: any;
+  category: Category[];
+  available: boolean;
+  color: Category[];
+  storage: Storage[];
+  brand: Category[];
+}
+
+interface Storage {
+  id: number;
+  size: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Category {
+  id: number;
+  name: string;
+  created_at: string;
+  updated_at: string;
+}
+
+interface Model {
+  id: number;
+  name: string;
+  brand_id: number;
   created_at: string;
   updated_at: string;
 }
