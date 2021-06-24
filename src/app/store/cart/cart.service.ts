@@ -32,7 +32,7 @@ export class CartService {
         localStorage.setItem("mycart",JSON.stringify(array) );
       } else {
         // have data
-        let array = tmp
+        let array = tmp 
         array.push(data)
         localStorage.setItem("mycart",JSON.stringify(array) );
       }
