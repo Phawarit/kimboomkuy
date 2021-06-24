@@ -1,5 +1,11 @@
 .admin{
     margin: 1% 8%;
+    .top{
+        display: flex;
+        p{
+            margin-left: 10px;
+        }
+    }
     
   }
   .form-group{

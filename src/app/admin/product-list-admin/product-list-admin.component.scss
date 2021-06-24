@@ -1,81 +1,95 @@
 span{
   flex: 1 1 auto;
 }
-.example-container {
-    padding: 1% 8%;
-    width: 100%;
-    height: 88%;
-    span{
-        flex: 1 1 auto;
-    }
-    mat-drawer{
-      width: 15%;
-      p{
-        margin-top: 4%;
-      }
-    }
-    
-    .form-check{
-      margin-left: 10px;
-    }
-    .dropdown{
-      margin-left: 10px;
-      background-color: hotpink;
-      .dropdown-menu{
-        font-size: 12px;
-      }
-    }
-  
-    .a,.b,.c{
-      width: 100%;
-      padding: 5% 10%;
-    }
-    .a{
-      background-color: rgb(226, 223, 223);
-    }
-  
-    .c{
-      mat-button-toggle-group{
-        width: 100%;
-        margin: auto;
-        mat-button-toggle{
-          width: 50%;
-          text-align: center;
-        }
-      }
-      .price{
-        border: solid 0.5px gray;
-        border-radius: 12px;
-        margin: auto 5%;
-        padding: 5px 10px;
-      }
-    }
-    
-  
-    .products-select{
-      padding: 2%;
-      height: 100%;
-      .bar{
-          display: flex;
-      }
-      .products{
-        display: flex;
-        flex-wrap: wrap;
-        margin: auto;
-        mat-card{
-          width: 23%;
-          margin: 1%;
-          .edit{
-            display: flex;
-            button{
-                border: none;
-                background-color: red;
-                color: white;
-            }
-          }
-        }
-      }
-    }
-  
+.test{
+  align-items: center;
+}
+.table{
+  padding: 0 5% 0 5%;
+  td{
+    border: none;
+    padding: 10px;
   }
+  .detail:hover{
+    background-color: rgb(197, 196, 194);
+  }
+}
+
+// .example-container {
+//     padding: 1% 8%;
+//     width: 100%;
+//     height: 88%;
+//     span{
+//         flex: 1 1 auto;
+//     }
+//     mat-drawer{
+//       width: 15%;
+//       p{
+//         margin-top: 4%;
+//       }
+//     }
+    
+//     .form-check{
+//       margin-left: 10px;
+//     }
+//     .dropdown{
+//       margin-left: 10px;
+//       background-color: hotpink;
+//       .dropdown-menu{
+//         font-size: 12px;
+//       }
+//     }
+  
+//     .a,.b,.c{
+//       width: 100%;
+//       padding: 5% 10%;
+//     }
+//     .a{
+//       background-color: rgb(226, 223, 223);
+//     }
+  
+//     .c{
+//       mat-button-toggle-group{
+//         width: 100%;
+//         margin: auto;
+//         mat-button-toggle{
+//           width: 50%;
+//           text-align: center;
+//         }
+//       }
+//       .price{
+//         border: solid 0.5px gray;
+//         border-radius: 12px;
+//         margin: auto 5%;
+//         padding: 5px 10px;
+//       }
+//     }
+    
+  
+//     .products-select{
+//       padding: 2%;
+//       height: 100%;
+//       .bar{
+//           display: flex;
+//       }
+//       .products{
+//         display: flex;
+//         flex-wrap: wrap;
+//         margin: auto;
+//         mat-card{
+//           width: 23%;
+//           margin: 1%;
+//           .edit{
+//             display: flex;
+//             button{
+//                 border: none;
+//                 background-color: red;
+//                 color: white;
+//             }
+//           }
+//         }
+//       }
+//     }
+  
+//   }
   

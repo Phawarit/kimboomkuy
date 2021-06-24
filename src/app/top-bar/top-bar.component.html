@@ -7,7 +7,7 @@
     <a class="navbar-brand" href="#">หน้าแรก</a>
     <a class="navbar-brand" routerLinkActive="active" routerLink="/product-list">สมาร์ทโฟน</a>
     <a class="navbar-brand" href="#">อุปกรณ์เสริม</a>
-    <a class="navbar-brand" href="#">ประวัติการซื้อ</a>
+    <a class="navbar-brand" routerLink="/history">ประวัติการซื้อ</a>
     <a class="navbar-brand" href="#">ติดต่อเรา</a>
   </div>
 
@@ -22,8 +22,12 @@
       </a>
       
       <mat-menu #beforeMenu="matMenu" xPosition="before">
-        <button mat-menu-item [routerLink]="['/login']"><p>เข้าสู่ระบบ</p></button>
-        <button mat-menu-item [routerLink]="['/registerpage']"><p>สม้ครสมาชิก</p></button>
+        <button mat-menu-item [routerLink]="['/login']" *ngIf="userData != 'true' "><p>เข้าสู่ระบบ</p></button>
+        <button mat-menu-item [routerLink]="['/registerpage']" *ngIf="userData != 'true'"><p>สม้ครสมาชิก</p></button>
+        <button mat-menu-item [routerLink]="['/profile']" *ngIf="userData == 'true'" ><p>โปรไฟล์</p></button>
+        <button mat-menu-item [routerLink]="['/login']" *ngIf="userData == 'true'" (click)="logout()"><p>ออกจากระบบ</p></button>
+
+        
       </mat-menu>
     </div>
   </div>

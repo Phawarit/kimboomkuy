@@ -18,13 +18,17 @@ import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { Moment } from 'moment/moment';
+
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './login/login.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
 import { RegisterComponent } from './register/register.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
@@ -49,6 +53,8 @@ import { ProfileadminComponent } from './admin/profileadmin/profileadmin.compone
 import { TestRequestGetComponent } from './test-request-get/test-request-get.component';
 import { FriendComponent } from './friend/friend.component';
 
+import { TokenInterceptorService } from './interceptor/token-interceptor.service';
+import { UserService } from './service/user.service'
 
 @NgModule({
   declarations: [
@@ -75,7 +81,6 @@ import { FriendComponent } from './friend/friend.component';
     OrderHistoryComponent,
     MemberListComponent,
     AddProductAdminComponent,
-
     EditproductComponent,
     ProfileadminComponent,
     TestRequestGetComponent,
@@ -86,7 +91,6 @@ import { FriendComponent } from './friend/friend.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    HttpClientModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatInputModule,
@@ -103,10 +107,21 @@ import { FriendComponent } from './friend/friend.component';
     HttpClientModule,
     TestModule,
     FormsModule,  
-    MatTabsModule
+    MatTabsModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UserService,
+   { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true },
+   MatFormFieldModule,MatDatepickerModule,
+   
+  ],
+  bootstrap: [AppComponent],
+  exports:[
+    MatDatepickerModule,
+    MatButtonModule
+  ],
   
 })
 export class AppModule { }

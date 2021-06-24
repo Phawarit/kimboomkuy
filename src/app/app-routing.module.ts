@@ -18,6 +18,8 @@ import { HistoryDetailComponent } from './profile/history-detail/history-detail.
 import { OrderHistoryComponent } from './admin/order-history/order-history.component';
 import { MemberListComponent } from './admin/member-list/member-list.component';
 import { AddProductAdminComponent } from './admin/add-product-admin/add-product-admin.component';
+import { LoginGuardGuard } from './guards/login-guard.guard';
+import { ProfileadminComponent } from './admin/profileadmin/profileadmin.component';
 
 const routes: Routes = [
   { path: '', pathMatch:'full',redirectTo: 'home'},
@@ -32,12 +34,15 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'history', component: HistoryComponent},
   { path: 'product-detail', component: ProductdetailComponent},
-  { path: 'edit-product-admin/:id', component: EditProductAdminComponent },
+  //{ path: 'edit-product-admin/:id', component: EditProductAdminComponent },
+  { path: 'edit-product-admin', component: EditProductAdminComponent },
   { path: 'producttail', component: ProductdetailComponent },
   { path: 'history-detail', component: HistoryDetailComponent },
   { path: 'order-history', component: OrderHistoryComponent },
-  { path: 'member', component: MemberListComponent },
+  { path: 'member', component: MemberListComponent, canActivate: [LoginGuardGuard] },
+  //{ path: 'member', component: MemberListComponent },
   { path: 'add-product-admin', component: AddProductAdminComponent },
+  { path: 'profile-admin', component: ProfileadminComponent },
   
 ];
 

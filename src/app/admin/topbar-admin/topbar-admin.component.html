@@ -20,8 +20,9 @@
         </a>
         
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-menu-item [routerLink]="['/login']"><p>เข้าสู่ระบบ</p></button>
-          <button mat-menu-item [routerLink]="['/registerpage']"><p>สม้ครสมาชิก</p></button>
+          <button mat-menu-item [routerLink]="['/login']" *ngIf="userData != 'true' "><p>เข้าสู่ระบบ</p></button>
+          <button mat-menu-item [routerLink]="['/registerpage']" *ngIf="userData != 'true'"><p>สม้ครสมาชิก</p></button>
+          <button mat-menu-item [routerLink]="['/login']" *ngIf="userData == 'true'" (click)="logout()"><p>ออกจากระบบ</p></button>
         </mat-menu>
       </div>
     </div>

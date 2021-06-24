@@ -13,10 +13,6 @@
             <p class="textH">ประวัติการซื้อ</p>
             <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-                <!--- Note that these columns can be defined in any order.
-                      The actual rendered columns are set as a property on the row definition" -->
-              
-                <!-- Position Column -->
                 <ng-container matColumnDef="position">
                   <th mat-header-cell *matHeaderCellDef> เลขออเดอร์ </th>
                   <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.position}} </td>
@@ -24,30 +20,30 @@
 
                 <ng-container matColumnDef="dateCard">
                     <th mat-header-cell *matHeaderCellDef> วันที่สั่งซื้อ </th>
-                    <td mat-cell *matCellDef="let element"> {{element.dateCard}} </td>
+                    <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.dateCard}} </td>
                   </ng-container>
                   
                 <ng-container matColumnDef="dateCheckout">
                     <th mat-header-cell *matHeaderCellDef> วันที่ชำระเงิน </th>
-                    <td mat-cell *matCellDef="let element"> {{element.dateCheckout}} </td>
+                    <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.dateCheckout}} </td>
                 </ng-container>
 
                 <!-- Name Column -->
                 <ng-container matColumnDef="name">
                   <th mat-header-cell *matHeaderCellDef> ช่องทางการชำระเงิน </th>
-                  <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                  <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.name}} </td>
                 </ng-container>
               
                 <!-- Weight Column -->
                 <ng-container matColumnDef="weight">
                   <th mat-header-cell *matHeaderCellDef> ราคา </th>
-                  <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                  <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.weight}} </td>
                 </ng-container>
               
                 <!-- Symbol Column -->
                 <ng-container matColumnDef="symbol">
                   <th mat-header-cell *matHeaderCellDef> สถานะ </th>
-                  <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                  <td mat-cell *matCellDef="let element" [routerLink]="['/history-detail']"> {{element.symbol}} </td>
                 </ng-container>
               
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

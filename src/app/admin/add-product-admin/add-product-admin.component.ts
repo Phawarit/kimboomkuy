@@ -2,6 +2,7 @@ import { Component, OnInit, NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudService } from './../../service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-add-product-admin',
@@ -11,29 +12,40 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class AddProductAdminComponent implements OnInit {
   productForm: FormGroup;
   constructor(
-    public formBuilder: FormBuilder,
-    private router: Router,
-    private ngZone: NgZone,
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
     private crudService: CrudService,
+    private router: Router
   ) {
     this.productForm = this.formBuilder.group({
-      name: [''],
+      product_name:[''],
+      category_id:[''],
+      product_img:[''],
       price:[''],
+      amount:[''],
+      brand:[''],
       description:['']
     })
    }
 
   ngOnInit(): void {
+    
   }
 
   onSubmit():any {
-    this.crudService.AddProduct(this.productForm.value)
-    .subscribe(() => {
-      console.log("Data added successfilly");
-      this.ngZone.run(() => this.router.navigateByUrl('/product-list-admin'))
-    },(err) =>{
-      console.log(err);
-    })
+    this.http.post('https://api.arumirite.codes/products', this.productForm.getRawValue)
+    .subscribe( res => {
+      console.log(res);
+    });
+
+
+    // this.crudService.AddProduct(this.productForm.value)
+    // .subscribe(() => {
+    //   console.log("Data added successfilly");
+    //   this.ngZone.run(() => this.router.navigateByUrl('/product-list-admin'))
+    // },(err) =>{
+    //   console.log(err);
+    // })
   }
 
 }
