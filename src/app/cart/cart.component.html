@@ -12,7 +12,12 @@
    <hr>
 
    <div class="card"  >
-     {{itemCart.model}}
+     <span *ngIf = "itemCart.length>0"> 
+      {{itemCart[0].model}}
+     </span>
+     
+
+     {{itemCart.length}}
     
     <div class="card-body">
      
