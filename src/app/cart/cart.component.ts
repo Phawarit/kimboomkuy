@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { FormBuilder } from '@angular/forms'
-import { productcart } from './productcart-get';
+import { ProdutCart } from './productcart-get';
 import { CartService } from './../service/cart.service';
 import { Cart } from '../models/cart.model';
 
@@ -16,7 +16,8 @@ import { Cart } from '../models/cart.model';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  cart :  productcart [] =[];
+  itemCart:any;
+  cart :   ProdutCart [] =[];
   items:Cart[] = [];
   
   // const id  = this.route.snapshot.params.productId
@@ -32,6 +33,11 @@ export class CartComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.items =  this.getItem()
+
+    this.itemCart = localStorage.getItem('mycart')
+    this.itemCart = JSON.parse(this.itemCart)
+    console.log('itemCart')
+    console.log(this.itemCart)
     console.log('this.items');
     console.log(this.items);
     
@@ -40,7 +46,7 @@ export class CartComponent implements OnInit {
 
 
      
-    this.http.get<productcart  []>(`https://api.arumirite.codes/products/1`)
+    this.http.get< ProdutCart []>(`https://api.arumirite.codes/products/1`)
     
     .subscribe(response => {this.  cart = response; 
       // console.log(response)

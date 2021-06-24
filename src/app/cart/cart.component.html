@@ -2,19 +2,36 @@
 <div class="container">
  
   <div class="product">
-   <div class="row">
+    <div class="row">
+
      <div class="col-sm-8"><h2 >รถเข็นของคุณ</h2></div>
+     <div class="col-sm-4" [routerLink]="['/home']"><a><P><u>เลือกสินค้าต่อ</u></P></a></div>
 
-     <div class="col-sm-4" [routerLink]="['home']"><a><P><u>เลือกสินค้าต่อ</u></P></a></div>
-   </div>
-   
-   
+    </div>
+    
    <hr>
-   <div   *ngFor="let item of items" >
-     {{item.name}}
+
+   <div class="card"  >
+     {{itemCart.model}}
+    
+    <div class="card-body">
+     
+     
+      <div class="x">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+          <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+        </svg>
+
+      </div>
+      
+    </div>
+  </div>
+   
+  </div>
+  
 
 
-   </div>
+
    
    <!-- <div class="card w-100 ">
      <div class="card-body">
@@ -51,12 +68,9 @@
      </div>
    </div> -->
    
-  </div>
-  
   
  
  
-
 
  <div class="pay">
   <div class="cost">
@@ -73,7 +87,7 @@
       </div>
     </div>
   </div>
-   
-  
-   
- </div>
+</div>
+
+
+</div>

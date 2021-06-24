@@ -47,6 +47,10 @@ import { AddProductAdminComponent } from './admin/add-product-admin/add-product-
 import { EditproductComponent } from './admin/editproduct/editproduct.component';
 import { ProfileadminComponent } from './admin/profileadmin/profileadmin.component';
 import { TestRequestGetComponent } from './test-request-get/test-request-get.component';
+import { NG_ENTITY_SERVICE_CONFIG } from '@datorama/akita-ng-entity-service';
+import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
+import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -102,9 +106,9 @@ import { TestRequestGetComponent } from './test-request-get/test-request-get.com
     HttpClientModule,
     TestModule,
     FormsModule,  
-    MatTabsModule
+    MatTabsModule, environment.production ? [] : AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule
   ],
-  providers: [],
+  providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
   bootstrap: [AppComponent]
   
 })

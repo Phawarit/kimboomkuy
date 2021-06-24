@@ -16,6 +16,8 @@ export class UserService {
     getdetailMember(){
         return this.http.get('./../assets/data/user.json')
     }
+
+    
   
 
 }

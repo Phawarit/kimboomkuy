@@ -15,7 +15,7 @@
               <div *ngIf= "data.id == pic.id" > -->
                 
                 <!-- src="{{ pic .product_img}}" -->
-                {{ details[0]?.name }}
+                <!-- {{ details?.model }} -->
                 <img  class="d-block w-100"> 
 
               <!-- </div>
@@ -85,7 +85,7 @@
             - รองรับชาร์จไว 25W (Fast Charging)
           </li>
         </ul>
-        <h3><b>ข้อมูลเครือข่าย (Network)</b></h3>
+        <h3><b></b></h3>
         <ul>
           <li>
             เครือข่าย<br />
@@ -109,9 +109,9 @@
   </div>
 
   <div class="select" *ngIf="details">
-    <div class="card w-50"  *ngFor ="let pic of details">
+    <div class="card w-50"  >
       <div class="top">
-        {{ details[0].name }}
+        <!-- {{ details.model }} -->
         <p>Galaxy S21 5G</p>
       </div>
 

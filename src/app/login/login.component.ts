@@ -55,7 +55,9 @@ export class LoginComponent implements OnInit {
     if (this.form.valid == true) {
       localStorage.setItem("login_succes", 'true');
       this.http.post('https://api.arumirite.codes/login', this.form.getRawValue())
-      .subscribe(() => this.router.navigate(['/home'])); 
+      .subscribe((res) => 
+        this.router.navigate(['/home'])
+        ); 
       Swal.fire({
         position: 'center',
         icon: 'success',
