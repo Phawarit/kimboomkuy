@@ -4,73 +4,54 @@
 
     <div class="register">
       <p class="example-full-width1">สร้างบัญชีของคุณ</p>
-      <form [formGroup]="registerForm" class="example-form" (ngSubmit)="submit()" >
-        <mat-form-field class="example-full-width">
-          <mat-label>ชื่อ</mat-label>
-          <input formControlName="fName" 
-          matInput placeholder="ชื่อ" 
-          required/>
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>นามสกุล</mat-label>
-          <input formControlName="lName" 
-          matInput placeholder="นามสกุล" 
-          required />
-        </mat-form-field>
+      <form [formGroup]="registerForm" class="example-form needs-validation" (ngSubmit)="submit()" novalidate >
 
-        <mat-radio-group class="example-full-width" aria-label="เพศ" style="width: 100%;">
+        <div class="form-group">
+          <mat-form-field class="example-full-width ">
+            <mat-label>ชื่อ</mat-label>
+            <input class="form-control" formControlName="fName" matInput placeholder="" required [ngClass]="{'is-invalid':registerForm.controls.fName.touched && registerForm.controls.fName.invalid}"/>
+            <div class="invalid-feedback">ยังไม่ใส่ข้อมูล</div>
+          </mat-form-field>
+          <!-- <div *ngIf="registerForm.controls.fName.touched && registerForm.controls.fName.invalid">
+            no
+          </div> -->
+        </div>
+        
+        <div class="form-group">
+          <mat-form-field class="example-full-width ">
+            <mat-label>นามสกุล</mat-label>
+            <input formControlName="lName" class="form-control" [ngClass]="{'is-invalid':registerForm.controls.lName.touched && registerForm.controls.lName.invalid}"
+            matInput placeholder="" 
+            required />
+            <div class="invalid-feedback">ยังไม่ใส่ข้อมูล</div>
+          </mat-form-field>
+        </div>
+        
+
+        <div class="row" class="gender">
           <mat-label>เพศ</mat-label><br>
-          <mat-radio-button value="1">ชาย</mat-radio-button>
-          <mat-radio-button value="2">หญิง</mat-radio-button>
-        </mat-radio-group>
+          <mat-radio-group class="col-md-12 row" aria-label="เพศ" style="width: 100%;" formControlName="gender" >
+            <mat-radio-button value="ชาย" class="col-md-3">ชาย</mat-radio-button>
+            <mat-radio-button value="หญิง" class="col-md-4">หญิง</mat-radio-button>
+          </mat-radio-group>
+        </div>
 
-        <!-- <mat-form-field class="example-full-width">
-          <mat-label>เพศ</mat-label>
-          <input formControlName="gender" 
-          matInput placeholder="" 
-          required />
-        </mat-form-field> -->
+    
 
-        <mat-form-field class="example-full-width">
+        <mat-form-field appearance="fill" class="mt-4 mx-3" >
+          <mat-label>วันเกิด</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dob" placeholder="11/1/1999" >
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <!-- <mat-form-field class="example-full-width1">
           <mat-label>วันเกิด</mat-label>
           <input formControlName="วันเกิด" 
           matInput placeholder="" 
           required />
-        </mat-form-field>
+        </mat-form-field> -->
         
-        <!-- <form class="example-full-width">
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio1"
-              value="option1"
-            />
-            <label class="form-check-label" for="inlineRadio1">ชาย</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-              value="option2"
-            />
-            <label class="form-check-label" for="inlineRadio2">หญิง</label>
-          </div>
-          <div class="form-check form-check-inline">
-            <input
-              class="form-check-input"
-              type="radio"
-              name="inlineRadioOptions"
-              id="inlineRadio2"
-              value="option2"
-            />
-            <label class="form-check-label" for="inlineRadio2">อื่นๆ</label>
-          </div>
-        </form> -->
-  
         <mat-form-field class="example-full-width1">
           <mat-label>อีเมล</mat-label>
           <input formControlName="email" 
@@ -86,16 +67,15 @@
           type="password" 
           required/>
         </mat-form-field>
-  
+        
         <!-- <mat-form-field class="example-full-width1">
           <mat-label>ยืนยันรหัสผ่าน</mat-label>
           <input matInput placeholder="68578555" type="password" />
         </mat-form-field> -->
        
-        <input type="text" [disabled]="true" formControlName="test">
         <mat-form-field class="example-full-width1" >
           <mat-label >เบอร์ติดต่อ</mat-label>
-          <input [disabled]="true" matInput  placeholder="เบอร์ติดต่อ"
+          <input  matInput  placeholder="ตัวอย่าง:123456789"
           formControlName="tel"
           
            />
@@ -109,16 +89,11 @@
             required
           ></textarea>
         </mat-form-field>
-  
-        
-          <a>
-            <button type="submit" class="bt" >
-              สร้างบัญชีผู้ใช้
-            </button>
-
-          </a>
-        
-
+        <a>
+          <button type="submit" class="bt" >
+            สร้างบัญชีผู้ใช้
+          </button>
+        </a>
       </form>
   </div>
 

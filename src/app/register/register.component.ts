@@ -1,12 +1,12 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, FormControl} from '@angular/forms';
+import {FormBuilder, FormGroup, FormControl, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
-
 import { ActivatedRoute } from '@angular/router';
 import 'sweetalert2/dist/sweetalert2.min.css';
 import Swal from 'sweetalert2';
 import { CrudService } from '../service/crud.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +15,8 @@ import { CrudService } from '../service/crud.service';
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
-  tel: any;
-  
+  //const out = document.getElementById('output');
+
   register() {
     Swal.fire({
       position: 'center',
@@ -32,49 +32,51 @@ export class RegisterComponent implements OnInit {
     private http: HttpClient,
     private crudService: CrudService,
     private router: Router
-  ) { 
-      
-    }
+  ) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      fName:'',
+      fName:['',[
+        Validators.required
+      ]],
       lName:'',
-      email:'',
+      email:['',[
+        Validators.required,
+        Validators.pattern("[^ @]*@[^ @]*")
+      ]],
       username:'',
-      password:'',
+      password:['', [
+        Validators.required,
+        Validators.minLength(6)
+      ]],
       gender:'',
       dob:'',
       user_img:'',
-      tel: new FormControl({value:'0258', disabled: true}),
+      tel: '',
+      //tel: new FormControl({value:'', disabled: false}),
       address:'',
-      invoice_number:'',
-      test:new FormControl({value: '', disabled: true})
+      invoice_number:''
     })
-    
   }
 
   submit():void {
-    //console.log(this.registerForm.getRawValue())
+    
     this.http.post('https://api.arumirite.codes/users', this.registerForm.getRawValue())
     .subscribe( res => {
       console.log(res);
       this.router.navigate(['/login'])
     });
   }
-
-  // submit(): void {     
-  //   this.http.post('https://api.arumirite.codes/login', this.registerForm.getRawValue())
-  //   .subscribe(() => this.router.navigate(['/home'])); console.log   }
-
-  // submit(): void{
-  //   console.log(this.registerForm.getRawValue());
-  //   this.http.post('https://api.arumirite.codes',this.registerForm.getRawValue())
-  //     .subscribe( res => {
-  //       console.log(res)
-  //       this.router.navigate(['/home'])
-  //     })
-  // }
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+

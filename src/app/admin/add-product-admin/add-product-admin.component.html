@@ -1,6 +1,47 @@
+<app-topbar-admin></app-topbar-admin>
 <div class="container mt-3">
-    <h1>Add data</h1>
-    <div class="row justify-content center mt-3">
+    <p class="textH">เพิ่มสินค้า</p>
+    <hr>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+        <div class="test">
+            <p>ชื่อสินค้า</p>
+            <input type="text" matInput placeholder="แบร์น" formControlName="brand" required>
+            <p>รุ่น</p>
+            <input type="text" matInput placeholder="รุ่น" formControlName="product_name" required>
+        </div>
+        
+        <hr>
+        <div class="test">
+            <p>รูปสินค้า</p>
+        <input type="text" matInput placeholder="แก้เป็นใส่รูป" formControlName="product_img" required>
+        </div>
+        
+        <hr>
+        <div class="test">
+            <p>ตัวเลือกสินค้า</p>
+        <!-- <input type="text" matInput placeholder="สี" formControlName="product_name" required> -->
+        <!-- <input type="text" matInput placeholder="ขนาดพื้นที่" formControlName="product_name" required> -->
+        <input type="text" matInput placeholder="จำนวนสินค้า" formControlName="amount" required>
+        <input type="text" matInput placeholder="ราคาสินค้า" formControlName="price" required>
+        </div>
+        
+        <hr>
+        <div class="test">
+            <p>สเปคของสินค้า</p>
+            <!-- <input type="text" matInput placeholder="" formControlName="" required> -->
+            <p>รายละเอียดเพิ่มเติม</p>
+            <input type="text" matInput placeholder="" formControlName="description" required>
+        </div>
+        
+        <button type="submit" >
+            เพิ่มสินค้า
+        </button>
+    </form>
+
+    
+
+
+    <!-- <div class="row justify-content center mt-3">
         <div class="col-md-12">
             <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
                 <div class="form-gruop">
@@ -20,6 +61,6 @@
                  </div>
             </form>
         </div>
-    </div> 
+    </div>  -->
 
 </div>

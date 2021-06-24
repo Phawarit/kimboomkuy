@@ -1,5 +1,5 @@
 <app-topbar-admin></app-topbar-admin>
-<div class="container mt-3">
+<!-- <div class="container mt-3">
   <h1>update data</h1>
   <div class="row justify-content center mt-3">
       <div class="col-md-12">
@@ -23,27 +23,29 @@
       </div>
   </div> 
 
-</div>
-<!-- <div class="admin">
-  <a [routerLink]="['/product-list-admin']"> 
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="30"
-      height="30"
-      fill="currentColor"
-      class="bi bi-arrow-left-circle"
-      viewBox="0 0 16 16"
-    >
-      <path
-        fill-rule="evenodd"
-        d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
-      />
-    </svg>
-  </a>
-
-  <h1>แก้ไขสินค้า</h1>
+</div> -->
+<div class="admin">
+  <div class="top"> 
+    <a [routerLink]="['/product-list-admin']"> 
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="30"
+        height="30"
+        fill="currentColor"
+        class="bi bi-arrow-left-circle"
+        viewBox="0 0 16 16"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"
+        />
+      </svg>
+    </a>
+    <p class="textH">แก้ไขสินค้า</p>
+  </div>
+  
   <hr />
-  <h3>ชื่อสินค้า</h3>
+  <p class="textH">ชื่อสินค้า</p>
   <form>
     <div class="form-group">
       <label for="exampleInputEmail1">แบรนด์</label>
@@ -62,7 +64,7 @@
   <hr />
 
   <div class="addpicproduct">
-    <h2>รูปสินค้า</h2>
+    <p class="textH">รูปสินค้า</p>
     <div class="card">
       <div class="card-body">
         <span> </span>
@@ -87,7 +89,7 @@
     </div>
   </div>
   <hr />
-  <h2>ตัวเลือกสินค้า</h2>
+  <p class="textH">ตัวเลือกสินค้า</p>
   <div class="selectproduct">
     <div class="dropdown">
       <button
@@ -142,7 +144,7 @@
   </div>
   <hr />
   <div class="form-group2">
-    <h2>สเปคของสินค้า</h2>
+    <p class="textH">สเปคของสินค้า</p>
     <textarea
       class="form-control"
       id="exampleFormControlTextarea1"
@@ -150,4 +152,4 @@
     ></textarea>
   </div>
   <button type="button" class="btn btn-primary btn-lg">เพิ่มสินค้า</button>
-</div> -->
+</div>
