@@ -1,41 +1,53 @@
 div{
-    background-color: #3c3c3c;
+    background-color: #28272D;
     display: flex;
     padding: 1% 5%;
+    p{color: white;}
     .contact{
         display: block;
-        width: 50%;
+        width: 40%;
         h2, p{
-            color: whitesmoke;
             margin: 0;
         }
-        input{
+        .input{
             margin: 10px 0;
             padding: 2px 10px;
             font-size: 14px;
-        }
-        button{
-            display: block;
-            border: 0;
-            padding: 4px 10px;
-            border-radius: 10px;
-            p{
-                color: black;
+            input{
+                border-radius: 10px 0 0 10px;
+                border: 0;
+                outline:none;
+                padding-left: 10px;
             }
-        }button:hover{
-            background-color: rgb(194, 194, 194);
+            button{
+                display: block;
+                border: 0;
+                padding: 4px 10px;
+                border-radius: 0 10px 10px 0;
+                background-color: #3986D2;
+                color: white;
+            }button:hover{
+                background-color: rgb(194, 194, 194);
+            }
         }
+        
     }
-    span{
-        flex: 1 1 auto;
+    .brand{
+        width: 30%;
+        list-style-type:none;
     }
     .location{
         display: block;
         width: 30%;
-        p{color: white;}
-        //background-color: yellowgreen;
+       
         mat-icon{
-            color: rgb(167, 144, 144);
+            color: white;
+        }
+        table{
+            .icon{
+                width: 15%; 
+            }
+            
         }
     }
 }

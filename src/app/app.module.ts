@@ -11,20 +11,24 @@ import { MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule} from '@angular/material/button';
-import { MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS_FACTORY} from '@angular/material/radio';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule} from '@angular/material/icon';
 import { MatButtonToggleModule} from '@angular/material/button-toggle';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
+import { MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { Moment } from 'moment/moment';
+
 
 import { AppComponent } from './app.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { BannerComponent } from './banner/banner.component';
 import { LoginComponent } from './login/login.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
 import { RegisterComponent } from './register/register.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { CartComponent } from './cart/cart.component';
@@ -52,6 +56,9 @@ import { AkitaNgDevtools } from '@datorama/akita-ngdevtools';
 import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { environment } from '../environments/environment';
 
+import { TokenInterceptorService } from './interceptor/token-interceptor.service';
+import { UserService } from './service/user.service';
+import { ManageDataAdminComponent } from './admin/manage-data-admin/manage-data-admin.component'
 
 @NgModule({
   declarations: [
@@ -78,10 +85,10 @@ import { environment } from '../environments/environment';
     OrderHistoryComponent,
     MemberListComponent,
     AddProductAdminComponent,
-
     EditproductComponent,
     ProfileadminComponent,
     TestRequestGetComponent,
+    ManageDataAdminComponent,
     
   ],
   imports: [
@@ -89,7 +96,6 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatCardModule,
-    HttpClientModule,
     ReactiveFormsModule,
     MatSidenavModule,
     MatInputModule,
@@ -105,11 +111,20 @@ import { environment } from '../environments/environment';
     MatTableModule,
     HttpClientModule,
     TestModule,
-    FormsModule,  
+    FormsModule,
+    MatSelectModule,  
+    MatNativeDateModule,
     MatTabsModule, environment.production ? [] : AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule
   ],
-  providers: [{ provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
-  bootstrap: [AppComponent]
+  providers: [
+    UserService,{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true },
+    MatFormFieldModule,MatDatepickerModule,
+    { provide: NG_ENTITY_SERVICE_CONFIG, useValue: { baseUrl: 'https://jsonplaceholder.typicode.com' }}],
+  bootstrap: [AppComponent],
+  exports:[
+    MatDatepickerModule,
+    MatButtonModule
+  ],
   
 })
 export class AppModule { }

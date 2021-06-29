@@ -5,11 +5,12 @@
 .pageLogin {
   justify-content: center;
   display: flex;
+  
   button{
     border: 0;
     padding: 1.5%;
     width: 70%;
-    background-color: rgb(107, 105, 97);
+    background-color: #3C3C3C;
     color: white;
     }
     button:hover{
@@ -18,11 +19,16 @@
 ////////
   .lickRegister {
     width: 40%;
-    background-color: rgb(225, 225, 231);
+    background-color:  #3C3C3C;;
+    color: white;
+    border-radius: 15px 0px 0px 15px;
     .text {
       width: 50%;
       text-align: center;
       margin: 30% auto;
+    }
+    button{
+        background-color: #3986D2;
     }
     
   }
@@ -30,6 +36,7 @@
   .login {
     width: 60%;
     border: black solid 1px;
+    border-radius: 0px 15px 15px 0px;
     padding: 5%;
     .example-form {
       min-width: 150px;
@@ -47,9 +54,8 @@
     
     .buttonLogin{
         margin-top: 2%;
-        border: solid rgb(107, 105, 97);
-        background-color: whitesmoke;
-        color: black;
+        background-color: #3C3C3C;
+        color: white;
     }
     div{
         text-align: center;

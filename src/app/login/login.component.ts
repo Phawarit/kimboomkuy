@@ -2,7 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { error } from 'protractor';
 import Swal from 'sweetalert2';
+import { UserService } from '../service/user.service';
 
 
 @Component({
@@ -30,7 +32,9 @@ export class LoginComponent implements OnInit {
   constructor( 
     private formBuilder:FormBuilder,
     private http:HttpClient,
-    private router:Router) { }
+    private router:Router,
+    private userService: UserService,
+  ) { }
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -41,45 +45,43 @@ export class LoginComponent implements OnInit {
     });
     console.log(this.form);
   }
-  onSubmit(){
-    console.log(this.form);
+
+  Submit(): void {     
+    this.userService.loginUser( this.form.value)
+    .subscribe((res) => {
+      //console.log(res);
+      if(res.user && res.user.length > 0 && res.user[0]['email']){
+        //console.log(res.user[0])
+        //console.log(res.user[0]['token'])
+        if(this.form.valid == true){
+          localStorage.setItem("login", 'true' )
+          localStorage.setItem('token', res.user[0]['token'] )
+          this.router.navigate(['/home'])
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'เข้าสู่ระบบสำเร็จ',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      }if(res.error == 'Invalid email, username or password' ){
+        console.log('dfwnijjfi')
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'โปรดใส่รหัสให้ถูกต้อง',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+      
+    }
+    ,(error)=>{
+      console.log(error)
+    }
+
+    ); 
     
-    alert(JSON.stringify(this.form.value));
-  }
-
-
-
-
-  
-
-
-
-  Submit(): void {
-    console.log(this.form);
-   
-   
-    this.submit = true
-    if (this.form.valid == true) {
-      localStorage.setItem("login_succes", 'true');
-      this.http.post('https://api.arumirite.codes/login', this.form.getRawValue())
-      .subscribe((res) => 
-        this.router.navigate(['/home'])
-        ); 
-      Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'เข้าสู่ระบบเรียบร้อยจ้า',
-        showConfirmButton: false,
-        timer: 1700
-      })
-    }
-    else{
-      Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: 'กรุณากรอกข้อมูลให้ถูกต้อง',
-        
-      })
-    }
   }
 }

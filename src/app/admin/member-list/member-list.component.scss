@@ -1,9 +1,25 @@
 .member{
     margin: 2% 8%;
-    height: 650px;
-    overflow: auto;
     table{
         width: 100%;
         
     }
+}
+.table{
+    padding: 0 5% 0 5%;
+    overflow: auto;
+    height: 580px;
+}
+.top{
+    border-bottom: black solid 0.5px;
+    //background-color: blue;
+}
+.detail{
+    td{
+        padding: 10px;
+        border: none;
+    }
+}
+.detail:hover{
+    background-color: rgb(197, 196, 194);
 }

@@ -1,34 +1,37 @@
 <nav class="navbar2 navbar-default navbar-fixed-top">
   <a class="navbar-brand-logo" href="#">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Disney%2B_logo.svg/1000px-Disney%2B_logo.svg.png" >
+    <img src="assets/img/logo.png" >
   </a>
 
-  <div class="linkbar">
-    <a class="navbar-brand" href="#">หน้าแรก</a>
-    <a class="navbar-brand" routerLinkActive="active" routerLink="/product-list">สมาร์ทโฟน</a>
-    <a class="navbar-brand" href="#">อุปกรณ์เสริม</a>
-    <a class="navbar-brand" href="#">ประวัติการซื้อ</a>
-    <a class="navbar-brand" href="#">ติดต่อเรา</a>
-  </div>
+  
 
   <div class="linkbaricon">
-    <input type="text" placeholder="search" >
-    <div>
+    <div class="linkbar">
+      <a class="navbar-brand" href="#">หน้าแรก</a>
+      <a class="navbar-brand" routerLinkActive="active" routerLink="/product-list">สมาร์ทโฟน</a>
+      <a class="navbar-brand" href="#">อุปกรณ์เสริม</a>
+      <a class="navbar-brand" routerLink="/history">ประวัติการซื้อ</a>
+      <a class="navbar-brand" href="#">ติดต่อเรา</a>
+    </div>
+
+    <div class="icon">
+      <a [routerLink]="['/product-list']"><mat-icon >search</mat-icon></a>
       <a><mat-icon style="color: white;" [routerLink]="['/cart/:productcart']">shopping_cart</mat-icon></a>
       <a>
         <button mat-button [matMenuTriggerFor]="beforeMenu">
-          <mat-icon>account_circle</mat-icon>
+          <mat-icon *ngIf="userData != 'true' ">account_circle</mat-icon>
+          <mat-icon *ngIf="userData == 'true' " class="login">account_circle</mat-icon>
+         <!-- <img *ngIf="userData == 'true'" src="https://i.pinimg.com/564x/2c/9b/d4/2c9bd4b21fb4d0e3dfda41946e7ce3b1.jpg" > -->
         </button>
       </a>
-    
-        <mat-menu #beforeMenu="matMenu" xPosition="before" >
-          <button mat-menu-item [routerLink]="['/login']" *ngIf="userdata != 'true'"><p>เข้าสู่ระบบ</p></button>
-          <button mat-menu-item [routerLink]="['/registerpage']" *ngIf="userdata != 'true'"><p>สม้ครสมาชิก</p></button>
-          <button mat-menu-item [routerLink]="['/login']" *ngIf="userdata == 'true'"><p>ออกจากระบบ</p></button>
-        </mat-menu>
-
-      
+      <mat-menu #beforeMenu="matMenu" xPosition="before">
+        <button mat-menu-item [routerLink]="['/login']" *ngIf="userData != 'true' "><p>เข้าสู่ระบบ</p></button>
+        <button mat-menu-item [routerLink]="['/registerpage']" *ngIf="userData != 'true'"><p>สม้ครสมาชิก</p></button>
+        <button mat-menu-item [routerLink]="['/profile']" *ngIf="userData == 'true'" ><p>โปรไฟล์</p></button>
+        <button mat-menu-item [routerLink]="['/login']" *ngIf="userData == 'true'" (click)="logout()"><p>ออกจากระบบ</p></button>
+      </mat-menu>
     </div>
+    
   </div>
 
 </nav>

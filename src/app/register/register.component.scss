@@ -1,19 +1,20 @@
 .tests{
   height: 100%;
-  padding: 4% 8%;
+  padding: 2% 8%;
 
 }
 .fern {
   display: flex;
-  height: 550px;
+  height: auto;
   //////
   .register {
     width: 60%;
     border: black solid 1px;
-    p{
-      font-weight: 500;
-      font-size: 150%; 
-    }
+    background-color: #3C3C3C;
+    color: white;
+    border-radius: 15px 0px 0px 15px;
+    padding:  15px 50px;
+
     .example-form {
       min-width: 150px;
       padding: 10px 20px;
@@ -30,9 +31,12 @@
         color: whitesmoke;
       }
     }
+    table{
+      width: 100%;
+    }
 
     .example-full-width {
-      width: 50%;
+      width: 100%;
       padding-left: 15px;
       //margin-top: 12px;
 
@@ -42,16 +46,37 @@
       width: 100%;
       padding-left: 15px;
       margin-top: 12px;
-
-
     }
+    .gender{
+      margin-left: 12px;
+    }
+    mat-label{
+      color: white;
+    }
+  
+     ::ng-deep.mat-form-field-underline {
+      /*change color of underline*/
+      background-color: white !important;
+    } 
+    
+    ::ng-deep.mat-form-field-ripple {
+     /*change color of underline when focused*/
+     background-color: white !important;;
+    }
+    mat-datepicker-toggle {
+      color: white !important;
+     }
   }
+
+
   ///////
   .picturecompo {
     width: 40%;
-    background-color: rgb(219, 217, 217);
+    background-color: white;
     text-align: center;
     padding: 10% 14px;
+    border: 2px solid #3C3C3C;
+    border-radius: 0px 15px 15px 0px;
     table{
       text-align: start;
       margin: auto 20%;

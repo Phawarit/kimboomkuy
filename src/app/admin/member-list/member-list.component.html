@@ -1,11 +1,35 @@
 <app-topbar-admin></app-topbar-admin>
 <div class="member">
-    <p class="textH1">รายชื่อบัญชีผู้ใช้</p>
-
-    <div *ngFor="let member of detailMember">
-          <span>{{ member.id }}</span>
-          <span>{{ member.email }}</span>
+  <div class="row">
+    <p class="textH1 col-3">รายชื่อบัญชีผู้ใช้</p>
+    <span class="col-6"></span>
+    <div class="col-md-3" >
+      <input type="text" class="col-md-12" matInput placeholder="ค้นหา">
+  </div>
+  </div>
+    
+    <div class="table">
+      <table>
+        <tr class="top">
+          <th>เลขที่สมาชิก</th>
+          <th>ชื่อ</th>
+          <th>นามสกุล</th>
+          <th>อีเมลล์</th>
+          <th>วันที่สมัคร</th>
+          <th></th>
+        </tr>
+        <tr *ngFor="let member of detailMember" class="detail">
+          <td>{{ member.id }}</td>
+          <td>{{ member.fname }}</td>
+          <td>{{ member.lname }}</td>
+          <td>{{ member.email }}</td>
+          <td>{{ member.created_at }}</td>
+          <td><a style="color: red;">ลบข้อมูล</a></td>
+        </tr>
+      </table>
     </div>
+    
+    
     <!-- <div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
             <ng-container matColumnDef="position">

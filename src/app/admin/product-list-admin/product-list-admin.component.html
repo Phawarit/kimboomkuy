@@ -1,13 +1,83 @@
 <app-topbar-admin></app-topbar-admin>
 
-<div class="container mt-3" >
-    <div class="d-flex justify-content between flex-wrap flex-md-noward align-item-center pt-2 pb-2 md-3 border-bottom">
-        <p class="textH mt-3">สินค้าทั้งหมด</p>
+<div class="container mt-3 " >
+    <div class="d-flex justify-content between flex-wrap flex-md-noward align-item-center pt-2 pb-2 md-3 border-bottom ">
+        <p class="col-sm-10" class="textH">สินค้าทั้งหมด</p>
         <span></span>
-        <button class="btn btn-sm btn-primary" routerLink="/add-product-admin"> เพิ่มรายการสินค้า </button>
+        <input class="col-sm-2" type="text" placeholder="ค้นหา" >
+    </div >
+        
+    <div class="row pt-2 border-bottom px-5" >
+        <div class="col-md-3 row" >
+            <p class="col-md-4">หมวดหมู่</p>
+            <mat-form-field appearance="fill" class="col-md-8">
+                <mat-label >ทั้งหมด</mat-label>
+                <mat-select >
+                    <mat-option *ngFor="let categories of Categories" value="{{categories.id}}">{{categories.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3 row">
+            <p class="col-md-3">แบร์น</p>
+            <mat-form-field appearance="fill" class="col-md-9">
+                <mat-label>Choose an option</mat-label>
+                <mat-select >
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2" >Option 2 (disabled)</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="col-md-3 row">
+            <p class="col-md-4">เรียงตาม</p>
+            <mat-form-field appearance="fill" class="col-md-8">
+                <mat-label>Choose an option</mat-label>
+                <mat-select >
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2" >Option 2 (disabled)</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <span class="col-md-1"></span>
+        <div class="col-md-2" >
+            <button class=" col-md-12 btn btn-primary  btn-block" routerLink="/add-product-admin"> เพิ่มรายการสินค้า </button>
+        </div> 
     </div>
+
+    <div class="table">
+        <table class="col-md-12">
+            <tr>
+                <th>รหัสสินค้า</th>
+                <th>ชื่อสินค้า</th>
+                <th>แบร์นด์</th>
+                <th>หมวดหมู่</th>
+                <th>ราคา</th>
+                <th>จำนวน</th>
+            </tr>
+            <tr *ngFor="let product of Products" class="detail" routerLink="/edit-product-admin">
+                <td>{{ product.id }}</td>
+                <td>{{ product.model }}</td>
+                <td>{{ product.brand }}</td>
+                <td>{{ product.category }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.amount }}</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <div *ngFor="let product of products">
+        
+        {{product.model}}
+        {{product.brand}}
+        {{product.category}}
+        {{product.price}}
+        {{product.amount}}
+    </div> -->
     
-    <div  class="table-responsive">
+   
+    
+    <!-- <div  class="table-responsive">
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -31,72 +101,6 @@
                 </tr>
             </tbody>
         </table>
-    </div>
+    </div> -->
 </div>
-<!-- <mat-drawer-container class="example-container">
-    <mat-drawer mode="side" opened>
-        <div class="b">
-            <p>จัดเรียงตาม:</p>
-            <div class="dropdown" class="btn dropdown-toggle btn-secondary btn-sm" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                สินค้าใหม่
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">สินค้าใหม่</a>
-                <a class="dropdown-item" href="#">สินค้าเก่า</a>
-                <a class="dropdown-item" href="#">Something else </a>
-                </div>
-            </div>
-        </div>
-        
-
-        <div class="a">
-            <p class="fontsidebar">จัดเเยกตาม:</p>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-              <label class="form-check-label" for="exampleRadios1"> มือถือ </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" checked/>
-              <label class="form-check-label" for="exampleRadios1"> อุปกรณ์เสริม </label>
-            </div>
-            <p>แบรนด์</p>
-            <div class="form-check"  *ngFor="let banner of banners ; index as productId"  >
-                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked/>
-                <label class="form-check-label" for="exampleRadios1"> {{banner.band}} </label>
-            </div>
-        </div>
-      
-        <div class="c">
-            <p>ราคา:</p>
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-                <mat-button-toggle value="bold">ต่ำสุด</mat-button-toggle>
-                <mat-button-toggle value="italic">สูงสุด</mat-button-toggle>
-              </mat-button-toggle-group>
-          
-        </div>
-    </mat-drawer>
-
-    <div class="products-select">
-        <div class="bar">
-            <p class="textH">ทั้งหมด</p>
-            <span></span>
-           <button class="submitButton"><a style="color: white;">เพิ่มรายการสินค้า</a></button>
-        </div>
-        <div class="products">
-            <mat-card *ngFor="let product of products ; index as productId">
-                <img mat-card-image src="{{ product.src}}" [routerLink]="['/products', product.id]" >
-                <mat-card-content>
-                    <div class="edit">
-                        {{product.brand}}
-                        <span></span>
-                        <button [routerLink]="['/edit-product-admin']" >edit</button>
-                    </div>
-                    {{product.name}}<br>
-                    ราคา {{product.price}}
-                </mat-card-content>
-            </mat-card>
-        </div>
-        
-    </div>
-</mat-drawer-container> -->
-
 

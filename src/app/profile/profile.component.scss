@@ -39,6 +39,9 @@
                 width: 50%;
                 padding: 10px;
             }
+            mat-form-field{
+                width: 100%;
+            }
             .input{
                 width: 100%;
             }
@@ -59,3 +62,7 @@
     }
     
 }
+
+.active-link {
+    color: #F20B22;
+} 

@@ -1,13 +1,12 @@
 <app-topbar-admin></app-topbar-admin>
 <div class="container mt-3">
-    <p class="textH">เพิ่มสินค้า</p>
+    <p class="textH">แก้ไขสินค้า</p>
     <hr>
-    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" >
+    <form [formGroup]="manageDataForm"  >
         <div class="test">
-            <p class="textH">ชื่อสินค้า</p>
-            <div class="in row">
+            <p>ข้อมูลแบรนด์</p>
+            <div class="row">
                 <div class="dropdown col-md-5 row">
-                    <p>แบรนด์</p>
                     <button class="btn border dropdown-toggle "type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       เลือกแบรนด์
                     </button>
@@ -17,7 +16,6 @@
                 </div>
                 <span class="col-md-2 row"></span>
                 <div class="dropdown col-md-5 row">
-                    <p>รุ่น</p>
                     <button class="btn border dropdown-toggle "type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       พื้นที่หน่วยความจำ
                     </button>
@@ -26,26 +24,25 @@
                     </div>
                 </div>
             </div>
-            <hr>
             
             <!-- <input type="text" matInput placeholder="แบร์น" formControlName="brand" required>
             <p>รุ่น</p>
             <input type="text" matInput placeholder="รุ่น" formControlName="product_name" required> -->
         </div>
         
+        <hr>
         <div class="test ">
-            <p class="textH">รูปสินค้า</p>
-            <div class="in row">
+            <p>รูปสินค้า</p>
+            <div class="row">
                 <button type="button" class="btn bg-light col-md-2">เพิ่มรูปสินค้า</button>
             </div>
         <!-- <input type="text" matInput placeholder="แก้เป็นใส่รูป" formControlName="product_img" required> -->
-            <hr>
         </div>
         
-       
+        <hr>
         <div class="test">
-            <p class="textH">ตัวเลือกสินค้า</p>
-            <div class="in row">
+            <p>ตัวเลือกสินค้า</p>
+            <div class="row">
                 <div class="dropdown col-md-3 row">
                     <button class="btn border dropdown-toggle "type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       สี
@@ -74,59 +71,30 @@
         <input type="text" matInput placeholder="ขนาดพื้นที่" formControlName="product_name" required>
         <input type="text" matInput placeholder="จำนวนสินค้า" formControlName="amount" required>
         <input type="text" matInput placeholder="ราคาสินค้า" formControlName="price" required> -->
-            <hr>
         </div>
         
-        
+        <hr>
         <div class="test">
-            <p class="textH">สเปคของสินค้า</p>
-            <div class="in col-md-12 form-group">
+            <p>สเปคของสินค้า</p>
+            <div class="col-md-12 form-group">
                 <input type="text" class="form-control" placeholder="">
             </div>
             
             <!-- <input type="text" matInput placeholder="" formControlName="" required> -->
-            <hr>
         </div>
-        
+        <hr>
         <div class="test">
-            <p class="textH">รายละเอียดเพิ่มเติม</p>
-            <div class="in col-md-12 form-group">
-                <textarea class="form-control" rows="4"></textarea>
-            </div>
-            <div class="d-flex flex-row-reverse">
-                <button type="submit" class="btn btn-primary col-md-2">เพิ่มรูปสินค้า</button>
+            <p>รายละเอียดเพิ่มเติม</p>
+            <div class="col-md-12 form-group">
+                <textarea class="form-control" rows="3"></textarea>
             </div>
         
             <!-- <input type="text" matInput placeholder="" formControlName="description" required> -->
         </div>
         
-        
+        <div class="d-flex flex-row-reverse">
+            <button type="submit" class="btn btn-primary col-md-2">เพิ่มรูปสินค้า</button>
+        </div>
          
     </form>
-
-    
-
-
-    <!-- <div class="row justify-content center mt-3">
-        <div class="col-md-12">
-            <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-                <div class="form-gruop">
-                   <label for="name">Name</label> 
-                   <input type="text" class="form-control" formControlName="name" required>
-                </div>
-                <div class="form-gruop">
-                    <label for="name">Price</label> 
-                    <input type="text" class="form-control" formControlName="price" required>
-                 </div>
-                 <div class="form-gruop">
-                    <label for="name">Description</label> 
-                    <input type="text" class="form-control" formControlName="description" required>
-                 </div>
-                 <div class="form-gruop">
-                    <button class="btn btn-primary btn-block" type="submit">Add product</button>
-                 </div>
-            </form>
-        </div>
-    </div>  -->
-
 </div>
