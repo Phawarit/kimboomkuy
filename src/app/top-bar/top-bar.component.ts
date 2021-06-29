@@ -18,6 +18,7 @@ export class TopBarComponent implements OnInit {
   ngOnInit(): void {
     this.userdata =localStorage.getItem('login_succes')
     
+    
   }
 
 }

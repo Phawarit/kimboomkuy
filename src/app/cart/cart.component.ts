@@ -17,6 +17,7 @@ import { Cart } from '../models/cart.model';
 })
 export class CartComponent implements OnInit {
   itemCart:any;
+  countitem: number = 0
   cart :   ProdutCart [] =[];
   items:Cart[] = [];
   
@@ -33,14 +34,21 @@ export class CartComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.items =  this.getItem()
-
+   
+    
+    
     this.itemCart = localStorage.getItem('mycart')
     this.itemCart = JSON.parse(this.itemCart)
+    
+
+    
     console.log('itemCart')
     console.log(this.itemCart)
     console.log('this.items');
     console.log(this.items);
     
+    this.countitem = this.itemCart.length;
+    console.log(this.countitem);
     // const id  = this.route.snapshot.params.productId
     // console.log(id);
 
@@ -56,6 +64,21 @@ export class CartComponent implements OnInit {
 
   getItem():Cart[] {
     return this.cartService.getItems();
+  }
+  increase(){
+    this.itemCart.push()
+    localStorage.clearItem('mycart',JSON.stringify(this.itemCart))
+    
+      
+  }
+
+
+  decrease(){
+    this.itemCart.pop()
+    console.log(this.itemCart)
+    localStorage.setItem('mycart',JSON.stringify(this.itemCart))
+    
+
   }
 
   

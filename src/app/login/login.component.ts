@@ -13,6 +13,7 @@ import Swal from 'sweetalert2';
 export class LoginComponent implements OnInit {
   submit: boolean = false;
   checkemail: boolean =false;
+  
   form = new FormGroup({
   
     
@@ -45,6 +46,12 @@ export class LoginComponent implements OnInit {
     
     alert(JSON.stringify(this.form.value));
   }
+
+
+
+
+  
+
 
 
   Submit(): void {
