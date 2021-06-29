@@ -27,15 +27,6 @@ export class UserService {
       return this.http.post<any>('https://api.arumirite.codes/login',user)
     }
 
-    loggedIn(){
-      return !!localStorage.getItem('token')
-    }
-
-    logoutUser(user:any){
-      return this.http.post<any>('https://api.arumirite.codes/logout',user)
-    }
-
-
     getdetailMember(){
         return this.http.get(`${this.API_URL}/users_list`)
     }
@@ -51,6 +42,14 @@ export class UserService {
 
     getCategories(){
       return this.http.get(`${this.API_URL}/categories`)
+    }
+
+    upDateProfile(data:any){
+      return this.http.patch(`${this.API_URL}/users`,data)
+    }
+
+    postProduct(product:any){
+      return this.http.post(`${this.API_URL}/products`,product)
     }
 
 

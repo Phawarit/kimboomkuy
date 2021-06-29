@@ -24,7 +24,7 @@ export class TokenInterceptorService implements HttpInterceptor{
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     
     const token: any = localStorage.getItem('token');
-    console.log('token', token);
+    //console.log('token', token);
     
     if (token) {
       request = request.clone({ headers: request.headers.set('Authorization', 'Bearer ' + token) });
@@ -35,13 +35,13 @@ export class TokenInterceptorService implements HttpInterceptor{
       request = request.clone({ headers: request.headers.set('Content-Type', 'application/json') });
    }
 
-    request = request.clone({ headers: request.headers.set('Accept', 'application/json') });
+    //request = request.clone({ headers: request.headers.set('Accept', 'application/json') });
 
     return next.handle(request).pipe(
       map((event: HttpEvent<any>) => {
-        console.log(event);
+        //console.log(event);
           if (event instanceof HttpResponse) {
-              console.log('event--->>>', event);
+              //console.log('event--->>>', event);
           }
           return event;
       }),

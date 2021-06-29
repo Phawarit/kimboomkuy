@@ -16,6 +16,7 @@ import * as moment from 'moment';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   //const out = document.getElementById('output');
+  info:any;
 
   register() {
     Swal.fire({
@@ -36,10 +37,10 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      fName:['',[
+      fname:['',[
         Validators.required
       ]],
-      lName:'',
+      lname:'',
       email:['',[
         Validators.required,
         Validators.pattern("[^ @]*@[^ @]*")
@@ -52,7 +53,11 @@ export class RegisterComponent implements OnInit {
       gender:'',
       dob:'',
       user_img:'',
-      tel: '',
+      tel: ['', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(10)
+      ]],
       //tel: new FormControl({value:'', disabled: false}),
       address:'',
       invoice_number:''
@@ -60,11 +65,33 @@ export class RegisterComponent implements OnInit {
   }
 
   submit():void {
-    
     this.http.post('https://api.arumirite.codes/users', this.registerForm.getRawValue())
     .subscribe( res => {
       console.log(res);
-      this.router.navigate(['/login'])
+      this.info = res
+      if(this.info && this.info.length > 3 ){
+        if(this.registerForm.valid == true){
+          this.router.navigate(['/login'])
+          Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'เข้าสู่ระบบสำเร็จ',
+            showConfirmButton: false,
+            timer: 1500
+          })
+        }
+      }
+      if(this.info.error == 'Invalid username or password' ){
+        console.log('dfwnijjfi')
+        Swal.fire({
+          position: 'center',
+          icon: 'error',
+          title: 'โปรดใส่รหัสให้ถูกต้อง',
+          showConfirmButton: false,
+          timer: 1500
+        })
+      }
+      
     });
   }
 }

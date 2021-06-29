@@ -1,32 +1,38 @@
+<app-top-bar></app-top-bar>
 <div class="tests">
   <div class="fern">
     <!-- ................................................................................. -->
 
     <div class="register">
-      <p class="example-full-width1">สร้างบัญชีของคุณ</p>
+      <p class="textH">สร้างบัญชีของคุณ</p>
       <form [formGroup]="registerForm" class="example-form needs-validation" (ngSubmit)="submit()" novalidate >
-
-        <div class="form-group">
-          <mat-form-field class="example-full-width ">
-            <mat-label>ชื่อ</mat-label>
-            <input class="form-control" formControlName="fName" matInput placeholder="" required [ngClass]="{'is-invalid':registerForm.controls.fName.touched && registerForm.controls.fName.invalid}"/>
-            <div class="invalid-feedback">ยังไม่ใส่ข้อมูล</div>
-          </mat-form-field>
-          <!-- <div *ngIf="registerForm.controls.fName.touched && registerForm.controls.fName.invalid">
-            no
-          </div> -->
-        </div>
-        
-        <div class="form-group">
-          <mat-form-field class="example-full-width ">
-            <mat-label>นามสกุล</mat-label>
-            <input formControlName="lName" class="form-control" [ngClass]="{'is-invalid':registerForm.controls.lName.touched && registerForm.controls.lName.invalid}"
-            matInput placeholder="" 
-            required />
-            <div class="invalid-feedback">ยังไม่ใส่ข้อมูล</div>
-          </mat-form-field>
-        </div>
-        
+        <table>
+          <tr>
+            <td>
+              <div class="form-group">
+                <mat-form-field class="example-full-width ">
+                  <mat-label>ชื่อ</mat-label>
+                  <input class="form-control" formControlName="fname" matInput placeholder="" required [ngClass]="{'is-invalid':registerForm.controls.fname.touched && registerForm.controls.fname.invalid}"/>
+                  <div class="invalid-feedback">ยังไม่ใส่ข้อมูล</div>
+                </mat-form-field>
+                <!-- <div *ngIf="registerForm.controls.fName.touched && registerForm.controls.fName.invalid">
+                  no
+                </div> -->
+              </div>
+            </td>
+            <td>
+              <div class="form-group">
+                <mat-form-field class="example-full-width ">
+                  <mat-label>นามสกุล</mat-label>
+                  <input formControlName="lname" class="form-control" [ngClass]="{'is-invalid':registerForm.controls.lname.touched && registerForm.controls.lname.invalid}"
+                  matInput placeholder="" 
+                  required />
+                  <div class="invalid-feedback">ยังไม่ใส่ข้อมูล</div>
+                </mat-form-field>
+              </div>
+            </td>
+          </tr>
+        </table>
 
         <div class="row" class="gender">
           <mat-label>เพศ</mat-label><br>
@@ -35,8 +41,6 @@
             <mat-radio-button value="หญิง" class="col-md-4">หญิง</mat-radio-button>
           </mat-radio-group>
         </div>
-
-    
 
         <mat-form-field appearance="fill" class="mt-4 mx-3" >
           <mat-label>วันเกิด</mat-label>
@@ -72,14 +76,15 @@
           <mat-label>ยืนยันรหัสผ่าน</mat-label>
           <input matInput placeholder="68578555" type="password" />
         </mat-form-field> -->
-       
-        <mat-form-field class="example-full-width1" >
-          <mat-label >เบอร์ติดต่อ</mat-label>
-          <input  matInput  placeholder="ตัวอย่าง:123456789"
-          formControlName="tel"
-          
-           />
-        </mat-form-field>
+        <div class="form-group">
+          <mat-form-field class="example-full-width1" >
+            <mat-label >เบอร์ติดต่อ</mat-label>
+            <input  matInput  placeholder="ตัวอย่าง:123456789"
+            formControlName="tel" class="form-control" [ngClass]="{'is-invalid':registerForm.controls.tel.touched && registerForm.controls.tel.invalid}"/>
+             <div class="invalid-feedback">กรุณาใส่ให้ถูกต้อง</div>
+          </mat-form-field>
+        </div>
+        
         <mat-form-field class="example-full-width1">
           <mat-label>ที่อยุ่</mat-label>
           <textarea
@@ -112,5 +117,8 @@
       </tr>
     </table>
   </div>
+  </div>
 </div>
+
+<app-contact></app-contact>
 

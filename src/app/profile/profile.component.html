@@ -15,18 +15,19 @@
                 <span>{{ information.id }}</span>
                 <span>{{ information.email }}</span>
           </div>
+          <form [formGroup]="updateProfileForm" (ngSubmit)="onUpdate()" >
             <table *ngFor="let profile of Profile">
                 <tr >
                     <td >
                         <mat-form-field >
                             <mat-label>ชื่อ</mat-label>
-                            <input matInput  value="{{profile.fname}}">
+                            <input matInput  formControlName="fname" required value="{{profile.fname}}" >
                           </mat-form-field>
                     </td>
                     <td >
                         <mat-form-field >
                             <mat-label>นามสกุล</mat-label>
-                            <input matInput  value="{{profile.lname}}">
+                            <input matInput  formControlName="lname" required>
                           </mat-form-field>
                     </td>
                 </tr>
@@ -34,7 +35,7 @@
                     <td >
                         <mat-form-field >
                             <mat-label>วัน/เดือน/ปี เกิด</mat-label>
-                            <input matInput  value="{{profile.dob}}">
+                            <input matInput  formControlName="dob" required>
                           </mat-form-field>
                           <!-- <div>
                             <mat-form-field appearance="fill">
@@ -49,7 +50,7 @@
                     <td >
                         <mat-form-field >
                             <mat-label>เบอร์โทรศัพท์</mat-label>
-                            <input matInput  value="{{profile.tel}}">
+                            <input matInput  formControlName="tel" required>
                           </mat-form-field>
                     </td>
                 </tr>
@@ -57,7 +58,7 @@
                     <td >
                         <mat-form-field >
                             <mat-label>อีเมล</mat-label>
-                            <input matInput  value="{{profile.email}}">
+                            <input matInput  formControlName="email" required>
                           </mat-form-field>
                     </td>
                 </tr>
@@ -78,7 +79,7 @@
             </table>
             <mat-form-field appearance="fill" *ngFor="let profile of Profile">
                 <mat-label>ที่อยู่</mat-label>
-                <textarea matInput value="{{profile.address}}"></textarea>
+                <textarea matInput formControlName="address" required></textarea>
             </mat-form-field>
             <table *ngFor="let profile of Profile">
                 <tr >
@@ -110,7 +111,9 @@
                     </td>
                 </tr>
             </table>
-            <button><a class="textP">บันทึกข้อมูล</a></button>  
+            <button><a class="textP" type="submit">บันทึกข้อมูล</a></button>
+          </form>
+              
         </div>
     </div>
     

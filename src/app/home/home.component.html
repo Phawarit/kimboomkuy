@@ -1,5 +1,4 @@
 <app-top-bar></app-top-bar>
-{{message}}
 <div class="test">
     <app-banner></app-banner>
     <div class="products">
@@ -25,7 +24,10 @@
      <p class="textH">สินค้ามาใหม่</p>
      <span></span>
      <a class="textP">ดูทั้งหมด</a>
-    </div>
+  </div>
+  <div *ngFor="let tests of test">
+    {{tests.id}}
+  </div>
    <div class="product">
      <mat-card class="imageProductSlide" *ngFor="let product of products ; index as productId" >
        <h4>
@@ -38,6 +40,5 @@
    </div>
     </div>
 </div>
-
  <app-contact></app-contact>
 

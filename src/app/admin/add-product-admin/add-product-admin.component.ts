@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CrudService } from './../../service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-add-product-admin',
@@ -15,15 +16,19 @@ export class AddProductAdminComponent implements OnInit {
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private crudService: CrudService,
-    private router: Router
+    private router: Router,
+    private userService: UserService,
   ) {
     this.productForm = this.formBuilder.group({
-      product_name:[''],
+      model_id:[''],
       category_id:[''],
-      product_img:[''],
+      img:[''],
       price:[''],
+      available:[''],
       amount:[''],
-      brand:[''],
+      color_id:[''],
+      brand_id:[''],
+      storage_id:[''],
       description:['']
     })
    }

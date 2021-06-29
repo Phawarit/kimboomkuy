@@ -11,7 +11,7 @@ import { MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
 import { MatFormFieldModule} from '@angular/material/form-field';
 import { MatButtonModule} from '@angular/material/button';
-import { MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS_FACTORY} from '@angular/material/radio';
 import { MatSidenavModule} from '@angular/material/sidenav';
 import { MatMenuModule} from '@angular/material/menu';
 import { MatToolbarModule} from '@angular/material/toolbar';
@@ -57,7 +57,8 @@ import { AkitaNgRouterStoreModule } from '@datorama/akita-ng-router-store';
 import { environment } from '../environments/environment';
 
 import { TokenInterceptorService } from './interceptor/token-interceptor.service';
-import { UserService } from './service/user.service'
+import { UserService } from './service/user.service';
+import { ManageDataAdminComponent } from './admin/manage-data-admin/manage-data-admin.component'
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { UserService } from './service/user.service'
     EditproductComponent,
     ProfileadminComponent,
     TestRequestGetComponent,
+    ManageDataAdminComponent,
     
   ],
   imports: [
@@ -111,6 +113,7 @@ import { UserService } from './service/user.service'
     TestModule,
     FormsModule,
     MatSelectModule,  
+    MatNativeDateModule,
     MatTabsModule, environment.production ? [] : AkitaNgDevtools.forRoot(), AkitaNgRouterStoreModule
   ],
   providers: [

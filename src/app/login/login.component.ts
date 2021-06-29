@@ -44,18 +44,13 @@ export class LoginComponent implements OnInit {
     });
     console.log(this.form);
   }
-  // onSubmit(){
-  //   console.log(this.form);
-    
-  //   alert(JSON.stringify(this.form.value));
 
   Submit(): void {     
     this.userService.loginUser( this.form.value)
     .subscribe((res) => {
-      console.log(res);
-      
+      //console.log(res);
       if(res.user && res.user.length > 0 && res.user[0]['email']){
-        console.log(res.user[0])
+        //console.log(res.user[0])
         //console.log(res.user[0]['token'])
         if(this.form.valid == true){
           localStorage.setItem("login", 'true' )
@@ -85,6 +80,7 @@ export class LoginComponent implements OnInit {
       console.log(error)
     }
 
-    );   
+    ); 
+    
   }
 }
