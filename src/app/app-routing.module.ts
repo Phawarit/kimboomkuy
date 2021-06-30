@@ -34,13 +34,11 @@ const routes: Routes = [
   { path: 'checkout', component: CheckoutComponent},
   { path: 'history', component: HistoryComponent},
   { path: 'product-detail', component: ProductdetailComponent},
-  //{ path: 'edit-product-admin/:id', component: EditProductAdminComponent },
   { path: 'edit-product-admin', component: EditProductAdminComponent },
   { path: 'producttail', component: ProductdetailComponent },
   { path: 'history-detail', component: HistoryDetailComponent },
   { path: 'order-history', component: OrderHistoryComponent },
   { path: 'member', component: MemberListComponent, canActivate: [LoginGuardGuard] },
-  //{ path: 'member', component: MemberListComponent },
   { path: 'add-product-admin', component: AddProductAdminComponent },
   { path: 'profile-admin', component: ProfileadminComponent },
   
@@ -51,3 +49,10 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+
+
+
+
+ //{ path: 'edit-product-admin/:id', component: EditProductAdminComponent },
+ //{ path: 'member', component: MemberListComponent },

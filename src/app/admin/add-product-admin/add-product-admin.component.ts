@@ -12,6 +12,10 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class AddProductAdminComponent implements OnInit {
   productForm: FormGroup;
+  Brand: any;
+  Storage: any;
+  Color:any;
+  Model:any;
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -20,29 +24,45 @@ export class AddProductAdminComponent implements OnInit {
     private userService: UserService,
   ) {
     this.productForm = this.formBuilder.group({
-      model_id:[''],
-      category_id:[''],
-      img:[''],
+      brand_id: [''],
+      model_id: [''],
+      category_id: 1,
+      //img:[''],
       price:[''],
-      available:[''],
+      //available:[''],
       amount:[''],
       color_id:[''],
-      brand_id:[''],
       storage_id:[''],
       description:['']
     })
    }
 
   ngOnInit(): void {
-    
+    this.userService.getBrand().subscribe((res)=>{
+      this.Brand = res
+      console.log(this.Brand)
+    })
+
+    this.userService.getStorages().subscribe((res)=>{
+      this.Storage = res
+    })
+
+    this.userService.getColor().subscribe((res)=>{
+      this.Color = res
+    })
+
+    this.userService.getModels().subscribe((res)=>{
+      this.Model = res
+    })
+
   }
 
-  onSubmit():any {
-    this.http.post('https://api.arumirite.codes/products', this.productForm.getRawValue)
+  onSubmit():void {
+    console.log(this.productForm.value)
+    this.http.post('https://api.arumirite.codes/products', this.productForm.getRawValue())
     .subscribe( res => {
       console.log(res);
     });
-
 
     // this.crudService.AddProduct(this.productForm.value)
     // .subscribe(() => {
@@ -53,4 +73,17 @@ export class AddProductAdminComponent implements OnInit {
     // })
   }
 
+}
+
+interface productForm {
+  brand_id: number,
+  model_id:number,
+  category_id:number,
+      //img:[''],
+  price:number,
+      //available:[''],
+  amount:number,
+  color_id:number,
+  storage_id:number,
+  description:string
 }
