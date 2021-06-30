@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
   Submit(): void {     
     this.userService.loginUser( this.form.value)
     .subscribe((res) => {
-      //console.log(res);
+      console.log(res);
       if(res.user && res.user.length > 0 && res.user[0]['email']){
         //console.log(res.user[0])
         //console.log(res.user[0]['token'])

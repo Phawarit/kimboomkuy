@@ -69,9 +69,9 @@ export class RegisterComponent implements OnInit {
     .subscribe( res => {
       console.log(res);
       this.info = res
-      if(this.info && this.info.length > 3 ){
-        if(this.registerForm.valid == true){
-          this.router.navigate(['/login'])
+      console.log('test',this.info)
+      if( typeof this.info != "undefined"){
+        this.router.navigate(['/login'])
           Swal.fire({
             position: 'center',
             icon: 'success',
@@ -79,7 +79,9 @@ export class RegisterComponent implements OnInit {
             showConfirmButton: false,
             timer: 1500
           })
-        }
+        // if(this.registerForm.valid == true){
+          
+        // }
       }
       if(this.info.error == 'Invalid username or password' ){
         console.log('dfwnijjfi')

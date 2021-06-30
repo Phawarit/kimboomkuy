@@ -12,7 +12,6 @@ export class UserService {
 
   private API_URL= environment.API_URL;
 
-  //Http
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   
     constructor(
@@ -44,6 +43,22 @@ export class UserService {
       return this.http.get(`${this.API_URL}/categories`)
     }
 
+    getBrand(){
+      return this.http.get(`${this.API_URL}/brands`)
+    }
+
+    getStorages(){
+      return this.http.get(`${this.API_URL}/storages`)
+    }
+
+    getColor(){
+      return this.http.get(`${this.API_URL}/colors`)
+    }
+    
+    getModels(){
+      return this.http.get(`${this.API_URL}/models`)
+    }
+    
     upDateProfile(data:any){
       return this.http.patch(`${this.API_URL}/users`,data)
     }
@@ -51,6 +66,12 @@ export class UserService {
     postProduct(product:any){
       return this.http.post(`${this.API_URL}/products`,product)
     }
+
+    deleteProduct(id:any){
+      return this.http.delete(`${this.API_URL}/products/${id}`)
+    }
+
+
 
 
   

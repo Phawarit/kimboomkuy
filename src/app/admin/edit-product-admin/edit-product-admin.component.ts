@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { CrudService } from './../../service/crud.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { NgZone } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
 @Component({
   selector: 'app-edit-product-admin',
   templateUrl: './edit-product-admin.component.html',
@@ -17,7 +18,8 @@ export class EditProductAdminComponent implements OnInit {
     private router:Router,
     private ngZone: NgZone,
     private crudService: CrudService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private userService: UserService
   ) {
     this.getId = this.activatedRoute.snapshot.paramMap.get('id');
     this.crudService.GetProduct(this.getId).subscribe( res => {

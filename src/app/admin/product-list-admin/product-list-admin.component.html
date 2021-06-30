@@ -10,34 +10,40 @@
     <div class="row pt-2 border-bottom px-5" >
         <div class="col-md-3 row" >
             <p class="col-md-4">หมวดหมู่</p>
-            <mat-form-field appearance="fill" class="col-md-8">
+            <!-- <mat-form-field appearance="fill" class="col-md-8">
                 <mat-label >ทั้งหมด</mat-label>
                 <mat-select >
                     <mat-option *ngFor="let categories of Categories" value="{{categories.id}}">{{categories.name}}</mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
+            <div class="form-group col-md-8">
+                <select class="form-select" id="exampleFormControlSelect1" >
+                <option *ngFor="let categories of Categories" >{{categories.name}}</option>
+                </select>
+            </div>
         </div>
         <div class="col-md-3 row">
             <p class="col-md-3">แบร์น</p>
-            <mat-form-field appearance="fill" class="col-md-9">
-                <mat-label>Choose an option</mat-label>
-                <mat-select >
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2" >Option 2 (disabled)</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
-                </mat-select>
-            </mat-form-field>
+            <div class="form-group col-md-8">
+                <select class="form-select" id="exampleFormControlSelect1" >
+                <option *ngFor="let brand of Brand" >{{brand.name}}</option>
+                </select>
+            </div>
+            
         </div>
         <div class="col-md-3 row">
             <p class="col-md-4">เรียงตาม</p>
-            <mat-form-field appearance="fill" class="col-md-8">
-                <mat-label>Choose an option</mat-label>
+            <div class="form-group col-md-8">
+                <select class="form-select" id="exampleFormControlSelect1" >
+                <option >สินค้าใหม่</option>
+                </select>
+            </div>
+            <!-- <mat-form-field appearance="fill" class="col-md-8">
+                <mat-label>สินค้าใหม่</mat-label>
                 <mat-select >
-                <mat-option value="option1">Option 1</mat-option>
-                <mat-option value="option2" >Option 2 (disabled)</mat-option>
-                <mat-option value="option3">Option 3</mat-option>
+                <mat-option value="option1">สินค้าใหม่</mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
         </div>
         <span class="col-md-1"></span>
         <div class="col-md-2" >
@@ -55,14 +61,16 @@
                 <th>ราคา</th>
                 <th>จำนวน</th>
             </tr>
-            <tr *ngFor="let product of Products" class="detail" routerLink="/edit-product-admin">
-                <td>{{ product.id }}</td>
-                <td>{{ product.model }}</td>
-                <td>{{ product.brand }}</td>
-                <td>{{ product.category }}</td>
-                <td>{{ product.price }}</td>
-                <td>{{ product.amount }}</td>
+            <tr *ngFor="let product of Products" class="detail" >
+                <td routerLink="/edit-product-admin">{{ product.id }}</td>
+                <td routerLink="/edit-product-admin">{{ product.model }}</td>
+                <td routerLink="/edit-product-admin">{{ product.brand }}</td>
+                <td routerLink="/edit-product-admin">{{ product.category }}</td>
+                <td routerLink="/edit-product-admin">{{ product.price }}</td>
+                <td routerLink="/edit-product-admin">{{ product.amount }}</td>
+                <td ><a style="color: red;" (click)="delete(product.id)">ลบสินค้า</a></td>
             </tr>
+            
         </table>
     </div>
 
